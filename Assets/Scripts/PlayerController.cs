@@ -7,9 +7,17 @@ public class PlayerController : MonoBehaviour
 {
     int id;
     int x, y;
-    int score = 0;
-    bool shield = false;
-    bool functioning = true;
+    int score;
+    bool shield;
+    bool functioning;
+
+    private void Start()
+    {
+        x = y = 0;
+        score = 0;
+        shield = false;
+        functioning = true;
+    }
 
     // 0: N, 1: S, 2: E, 3: W
     int currentOrientation = 0;
@@ -53,6 +61,17 @@ public class PlayerController : MonoBehaviour
     public Vector2Int GetPosition()
     {
         return new Vector2Int(x, y);
+    }
+
+    public int GetPoint()
+    {
+        return score;
+    }
+
+    public int GetShield()
+    {
+        if (shield) return 1;
+        return 0;
     }
 
     public void Die()
@@ -145,7 +164,7 @@ public class PlayerController : MonoBehaviour
     {
         if (functioning)
         {
-            Debug.Log("Shield equipped!");
+            Debug.Log($"[P{id}] Shield equipped!");
             shield = shield | true;
         }
     }
@@ -154,7 +173,7 @@ public class PlayerController : MonoBehaviour
     {
         if (functioning)
         {
-            Debug.Log("Trap encountered!");
+            Debug.Log($"[P{id}] Trap encountered!");
             if (!shield)
             {
                 Die();
@@ -162,9 +181,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void GetPoint(int v)
+    public void EarnPoint(int v)
     {
-        Debug.Log($"Gain {v} coins!");
+        Debug.Log($"[P{id}] Gain {v} coins, totaling {score+v}!");
         score += v;
     }
 }

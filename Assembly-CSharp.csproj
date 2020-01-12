@@ -72,7 +72,7 @@
     <Compile Include="Assets\Scripts\Rotate.cs" />
     <None Include="Assets\AurynSky\Forest Pack\READ ME.txt" />
     <None Include="Assets\Lowpoly paper boats\doc\readme.txt" />
-    <None Include="Assets\test.txt" />
+    <None Include="Assets\Match\map.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Naru Bibi/Documents/GitHub/GameDev/TrashCollector/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Text.RegularExpressions;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 
 public class GameManager : MonoBehaviour
 {
@@ -20,48 +22,25 @@ public class GameManager : MonoBehaviour
 
     private string[,] boardData;
 
+    public string rootDir;
     public string mapConfigPath;
+    public string[] playerDir;
+    public string[] playerExe;
 
     private GameObject[,] boardTiles;
     private PlayerController[] players;
 
-    private int currentMove = 0;
-
-    public Vector2Int[] playerInitialPosition =
-    {
-        new Vector2Int(3, 5),
-        new Vector2Int(6, 4)
-    };
-
-    public Vector2Int[][] playerMoves =
-    {
-        new Vector2Int[] { 
-            new Vector2Int(3, 6),
-            new Vector2Int(7, 4),
-        },
-        new Vector2Int[] {
-            new Vector2Int(3, 5),
-            new Vector2Int(6, 4),
-        },
-        new Vector2Int[] {
-            new Vector2Int(4, 5),
-            new Vector2Int(5, 4),
-        },
-        new Vector2Int[] {
-            new Vector2Int(4, 5),
-            new Vector2Int(5, 5)
-        },
-        new Vector2Int[] {
-            new Vector2Int(5, 5),
-            new Vector2Int(4, 5)
-        }
-    };
+    public int currentMove = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        SetupBoardView(mapConfigPath);
-        SetupPlayerView();
+        SetupBoardView(rootDir + "/" + mapConfigPath);
+        players = new PlayerController[numPlayers];
+        for (int i = 0; i < numPlayers; i++)
+        {
+            players[i] = Instantiate(playerPrefabs[i], new Vector3(0, 0, 100), Quaternion.identity).GetComponent<PlayerController>();
+        }
         SetupSceneView();
     }
 
@@ -69,23 +48,6 @@ public class GameManager : MonoBehaviour
     {
         Camera.main.transform.position = new Vector3((numCols - 1.0f) / 2.0f, -(numRows - 1.0f) / 2.0f, -Mathf.Max(numCols, numRows));
         Instantiate(lightPrefab, new Vector3(), Quaternion.Euler(11.0f, 11.0f, 0.0f));
-    }
-
-    private void SetupPlayerView()
-    {
-        Vector2Int[] initialPositions = GetPlayerInitialPositions();
-        players = new PlayerController[numPlayers];
-        for (int i = 0; i < numPlayers; i++)
-        {
-            players[i] = Instantiate(playerPrefabs[i], new Vector3(initialPositions[i].y - 1, -initialPositions[i].x + 1), Quaternion.identity).GetComponent<PlayerController>();
-            players[i].SetPosition(playerInitialPosition[i]);
-            players[i].SetID(i);
-        }
-    }
-
-    Vector2Int[] GetPlayerInitialPositions()
-    {
-        return playerInitialPosition;
     }
 
     private void SetupBoardView(string config_path)
@@ -164,54 +126,73 @@ public class GameManager : MonoBehaviour
         { KeyCode.W, KeyCode.S, KeyCode.D, KeyCode.A }
     };
 
+    private void InitializePlayerPosition()
+    {
+        Vector2Int[] initialPositions = GetPlayerMoves();
+        for (int i = 0; i < numPlayers; i++)
+        {
+            players[i].transform.position = new Vector3(initialPositions[i].y - 1, -initialPositions[i].x + 1);
+            players[i].SetPosition(initialPositions[i]);
+            players[i].SetID(i);
+        }
+        ++currentMove;
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) && currentMove < numMoves)
         {
-            PlayNextMove();
+            if (currentMove == 0)
+            {
+                InitializePlayerPosition();
+            }
+            else
+            {
+                PlayNextMove();
+            }
         }
 
-        for (int i = 0; i < numPlayers; i++)
-        {
-            Vector2Int curPos = players[i].GetPosition();
-            int x = curPos.x, y = curPos.y;
-            if (Input.GetKeyDown(moveCmdMap[i, 3]))
-            {
-                Vector2Int[] previousPositions = {
-                    players[0].GetPosition() - Vector2Int.one ,
-                    players[1].GetPosition() - Vector2Int.one
-                };
-                SendMove(i, x, y - 1);
-                ProcessAfterMove(previousPositions);
-            }
-            else if (Input.GetKeyDown(moveCmdMap[i, 2]))
-            {
-                Vector2Int[] previousPositions = {
-                    players[0].GetPosition() - Vector2Int.one ,
-                    players[1].GetPosition() - Vector2Int.one
-                };
-                SendMove(i, x, y + 1);
-                ProcessAfterMove(previousPositions);
-            }
-            else if (Input.GetKeyDown(moveCmdMap[i, 0]))
-            {
-                Vector2Int[] previousPositions = {
-                    players[0].GetPosition() - Vector2Int.one ,
-                    players[1].GetPosition() - Vector2Int.one
-                };
-                SendMove(i, x - 1, y);
-                ProcessAfterMove(previousPositions);
-            }
-            else if (Input.GetKeyDown(moveCmdMap[i, 1]))
-            {
-                Vector2Int[] previousPositions = {
-                    players[0].GetPosition() - Vector2Int.one ,
-                    players[1].GetPosition() - Vector2Int.one
-                };
-                SendMove(i, x + 1, y);
-                ProcessAfterMove(previousPositions);
-            }
-        }
+        //for (int i = 0; i < numPlayers; i++)
+        //{
+        //    Vector2Int curPos = players[i].GetPosition();
+        //    int x = curPos.x, y = curPos.y;
+        //    if (Input.GetKeyDown(moveCmdMap[i, 3]))
+        //    {
+        //        Vector2Int[] previousPositions = {
+        //            players[0].GetPosition() - Vector2Int.one ,
+        //            players[1].GetPosition() - Vector2Int.one
+        //        };
+        //        SendMove(i, x, y - 1);
+        //        ProcessAfterMove(previousPositions);
+        //    }
+        //    else if (Input.GetKeyDown(moveCmdMap[i, 2]))
+        //    {
+        //        Vector2Int[] previousPositions = {
+        //            players[0].GetPosition() - Vector2Int.one ,
+        //            players[1].GetPosition() - Vector2Int.one
+        //        };
+        //        SendMove(i, x, y + 1);
+        //        ProcessAfterMove(previousPositions);
+        //    }
+        //    else if (Input.GetKeyDown(moveCmdMap[i, 0]))
+        //    {
+        //        Vector2Int[] previousPositions = {
+        //            players[0].GetPosition() - Vector2Int.one ,
+        //            players[1].GetPosition() - Vector2Int.one
+        //        };
+        //        SendMove(i, x - 1, y);
+        //        ProcessAfterMove(previousPositions);
+        //    }
+        //    else if (Input.GetKeyDown(moveCmdMap[i, 1]))
+        //    {
+        //        Vector2Int[] previousPositions = {
+        //            players[0].GetPosition() - Vector2Int.one ,
+        //            players[1].GetPosition() - Vector2Int.one
+        //        };
+        //        SendMove(i, x + 1, y);
+        //        ProcessAfterMove(previousPositions);
+        //    }
+        //}
     }
 
     private void PlayNextMove()
@@ -269,7 +250,7 @@ public class GameManager : MonoBehaviour
             {
                 ClearCell(x, y);
                 boardData[currentPositions[i].x, currentPositions[i].y] = "0";
-                players[i].GetPoint(int.Parse(cell));
+                players[i].EarnPoint(int.Parse(cell));
             }
         }
     }
@@ -282,6 +263,76 @@ public class GameManager : MonoBehaviour
 
     Vector2Int[] GetPlayerMoves()
     {
-        return playerMoves[currentMove];
+        GenerateMap();
+        RunPlayerProgram();
+        Vector2Int[] mvs = _GetPlayerMoves();
+        return mvs;
+    }
+
+    private Vector2Int[] _GetPlayerMoves()
+    {
+        Vector2Int[] mvs = new Vector2Int[numPlayers];
+        for (int i = 0; i < numPlayers; i++)
+        {
+            var sr = new StreamReader($"{rootDir}/{playerDir[i]}/MOVE.OUT");
+            var fileContents = sr.ReadToEnd();
+            sr.Close();
+
+            var lines = fileContents.Split('\n');
+            string[] line = lines[0].Split(' ');
+            mvs[i] = new Vector2Int(int.Parse(line[0]), int.Parse(line[1]));
+            Debug.Log(mvs[i]);
+        }
+        return mvs;
+    }
+
+    private void RunPlayerProgram()
+    {
+        for (int i = 0; i < numPlayers; i++)
+        {
+            Process process = new Process();
+
+            // Stop the process from opening a new window
+            // process.StartInfo.RedirectStandardOutput = true;
+            process.StartInfo.UseShellExecute = false;
+            process.StartInfo.CreateNoWindow = true;
+
+            // Setup executable and parameters
+            process.StartInfo.FileName = $"{rootDir}/{playerDir[i]}/{playerExe[i]}";
+            process.StartInfo.WorkingDirectory = $"{rootDir}/{playerDir[i]}/";
+
+            // Go
+            process.Start();
+            bool done = process.WaitForExit(5000);
+            if (!done) process.Kill();
+        }
+    }
+
+    private void GenerateMap()
+    {
+        for (int i = 0; i < numPlayers; i++)
+        {
+            string[] lines = new string[1 + 1 + 1 + numRows];
+            for (int j = 0; j < numRows; j++)
+            {
+                string[] tmp = new string[numCols];
+                for (int k = 0; k < numCols; k++) tmp[k] = boardData[j, k];
+                lines[j + 3] = string.Join(" ", tmp);
+            }
+
+            var f = File.CreateText($"{rootDir}/{playerDir[i]}/MAP.INP");
+            f.WriteLine($"{numRows} {numCols} {numMoves - currentMove}");
+            f.WriteLine($"{players[i].GetPosition().x} {players[i].GetPosition().y} " +
+                $"{players[1 - i].GetPosition().x} {players[1 - i].GetPosition().y}");
+            f.WriteLine($"{players[i].GetPoint()} {players[i].GetShield()}");
+            for (int j = 0; j < numRows; j++)
+            {
+                string[] tmp = new string[numCols];
+                for (int k = 0; k < numCols; k++)
+                    tmp[k] = boardData[j, k];
+                f.WriteLine(string.Join(" ", tmp));
+            }
+            f.Close();
+        }
     }
 }

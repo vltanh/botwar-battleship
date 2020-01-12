@@ -243,13 +243,15 @@ MonoBehaviour:
   playerPrefabs:
   - {fileID: 6985656288041185914, guid: 9c88f4e4ef3f8314d800ce9f5e231395, type: 3}
   - {fileID: 1963237206210152516, guid: b9f719cafa8a3e14ea6bb18d422588c7, type: 3}
-  numRows: 12
-  numCols: 12
-  numMoves: 5
-  mapConfigPath: C:\Users\Naru Bibi\Documents\GitHub\GameDev\TrashCollector\Assets\test.txt
-  playerInitialPosition:
-  - {x: 3, y: 5}
-  - {x: 6, y: 4}
+  rootDir: C:\Users\Naru Bibi\Documents\GitHub\GameDev\TrashCollector\Assets\Match
+  mapConfigPath: map.txt
+  playerDir:
+  - 0
+  - 1
+  playerExe:
+  - Team1.exe
+  - Team3.exe
+  currentMove: 0
 --- !u!4 &1523929194
 Transform:
   m_ObjectHideFlags: 0
