@@ -5,17 +5,20 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    int id;
+    string id;
     int x, y;
     int score;
-    bool shield;
+    bool isShield;
     bool functioning;
+
+    public GameObject shieldPrefab;
+    public GameObject shield;
 
     private void Start()
     {
         x = y = 0;
         score = 0;
-        shield = false;
+        isShield = false;
         functioning = true;
     }
 
@@ -47,9 +50,14 @@ public class PlayerController : MonoBehaviour
         { 2, 3, 1, 0 }
     };
 
-    public void SetID(int _id)
+    public void SetID(string _id)
     {
         id = _id;
+    }
+
+    public string GetID()
+    {
+        return id;
     }
 
     public void SetPosition(Vector2Int pos)
@@ -70,7 +78,7 @@ public class PlayerController : MonoBehaviour
 
     public int GetShield()
     {
-        if (shield) return 1;
+        if (isShield) return 1;
         return 0;
     }
 
@@ -78,7 +86,7 @@ public class PlayerController : MonoBehaviour
     {
         if (functioning)
         {
-            Debug.Log($"[P{id}] dies.");
+            Debug.Log($"[{id}] dies.");
             functioning = false;
         }
     }
@@ -109,7 +117,7 @@ public class PlayerController : MonoBehaviour
         int move = IntepretMove(_x, _y);
         if (move > -1 && functioning)
         {
-            Debug.Log($"[P{id}] Move from ({x}, {y}) to ({_x}, {_y})");
+            Debug.Log($"[{id}] Move from ({x}, {y}) to ({_x}, {_y})");
             x = _x; y = _y;
 
             move = moveMap[currentOrientation, move];
@@ -164,8 +172,10 @@ public class PlayerController : MonoBehaviour
     {
         if (functioning)
         {
-            Debug.Log($"[P{id}] Shield equipped!");
-            shield = shield | true;
+            Debug.Log($"[{id}] Shield equipped!");
+            isShield = isShield | true;
+            shield = Instantiate(shieldPrefab, transform);
+            shield.GetComponent<ShieldController>().Follow(gameObject);
         }
     }
 
@@ -173,8 +183,8 @@ public class PlayerController : MonoBehaviour
     {
         if (functioning)
         {
-            Debug.Log($"[P{id}] Trap encountered!");
-            if (!shield)
+            Debug.Log($"[{id}] Trap encountered!");
+            if (!isShield)
             {
                 Die();
             }
@@ -183,7 +193,7 @@ public class PlayerController : MonoBehaviour
 
     public void EarnPoint(int v)
     {
-        Debug.Log($"[P{id}] Gain {v} coins, totaling {score+v}!");
+        Debug.Log($"[{id}] Gain {v} coins, totaling {score+v}!");
         score += v;
     }
 }

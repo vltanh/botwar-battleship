@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Rotate.cs" />
+    <Compile Include="Assets\Scripts\ShieldController.cs" />
     <None Include="Assets\AurynSky\Forest Pack\READ ME.txt" />
     <None Include="Assets\Lowpoly paper boats\doc\readme.txt" />
     <None Include="Assets\Match\map.txt" />

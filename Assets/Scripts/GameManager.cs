@@ -5,14 +5,20 @@ using System.Diagnostics;
 using System.IO;
 using System.Text.RegularExpressions;
 using UnityEngine;
+using UnityEngine.UI;
 using Debug = UnityEngine.Debug;
 
 public class GameManager : MonoBehaviour
 {
+    public Text[] playerIDText;
+    public Text[] playerScoreText;
+    public Text stepCountText;
+
     public GameObject groundTilePrefab;
     public GameObject lightPrefab;
     public GameObject goldPrefab;
     public GameObject cloudPrefab;
+    public GameObject shieldPrefab;
     public GameObject[] playerPrefabs;
 
     private int numPlayers = 2;
@@ -24,8 +30,7 @@ public class GameManager : MonoBehaviour
 
     public string rootDir;
     public string mapConfigPath;
-    public string[] playerDir;
-    public string[] playerExe;
+    public string[] playerID;
 
     private GameObject[,] boardTiles;
     private PlayerController[] players;
@@ -46,7 +51,8 @@ public class GameManager : MonoBehaviour
 
     private void SetupSceneView()
     {
-        Camera.main.transform.position = new Vector3((numCols - 1.0f) / 2.0f, -(numRows - 1.0f) / 2.0f, -Mathf.Max(numCols, numRows));
+        Camera.main.transform.position = new Vector3((numCols - 1.0f) / 2.0f, -numRows, -0.9f * numRows);
+        Camera.main.transform.rotation = Quaternion.Euler(-30, 0, 0);
         Instantiate(lightPrefab, new Vector3(), Quaternion.Euler(11.0f, 11.0f, 0.0f));
     }
 
@@ -59,18 +65,19 @@ public class GameManager : MonoBehaviour
         {
             for (int j = 0; j < numCols; j++)
             {
-                Instantiate(groundTilePrefab, new Vector3(i, -j), Quaternion.identity);
+                Instantiate(groundTilePrefab, new Vector3(j, -i), Quaternion.identity);
                 if (boardData[i, j] == "W")
                 {
                     boardTiles[i, j] = Instantiate(cloudPrefab, new Vector3(j, -i), Quaternion.identity);
                 }
                 else if (boardData[i, j] == "M")
                 {
-
+                    boardTiles[i, j] = Instantiate(shieldPrefab, new Vector3(j, -i), Quaternion.identity);
                 }
                 else if (boardData[i, j] != "0")
                 {
                     boardTiles[i, j] = Instantiate(goldPrefab, new Vector3(j, -i), Quaternion.identity);
+                    boardTiles[i, j].transform.GetChild(1).gameObject.GetComponent<TextMesh>().text = boardData[i, j];
                 }
             }
         }
@@ -133,13 +140,19 @@ public class GameManager : MonoBehaviour
         {
             players[i].transform.position = new Vector3(initialPositions[i].y - 1, -initialPositions[i].x + 1);
             players[i].SetPosition(initialPositions[i]);
-            players[i].SetID(i);
+            players[i].SetID(playerID[i]);
         }
         ++currentMove;
     }
 
     void Update()
     {
+        for (int i = 0; i < numPlayers; i++) {
+            playerIDText[i].text = playerID[i];
+            playerScoreText[i].text = $"{players[i].GetPoint()}";
+        }
+        stepCountText.text = $"{currentMove}";
+
         if (Input.GetKeyDown(KeyCode.Space) && currentMove < numMoves)
         {
             if (currentMove == 0)
@@ -239,8 +252,8 @@ public class GameManager : MonoBehaviour
             string cell = boardData[x, y];
             if (cell == "M")
             {
-                ClearCell(x, y);
                 players[i].EquipShield();
+                ClearCell(x, y);
             }
             else if (cell == "W")
             {
@@ -248,9 +261,8 @@ public class GameManager : MonoBehaviour
             }
             else if (cell != "0")
             {
-                ClearCell(x, y);
-                boardData[currentPositions[i].x, currentPositions[i].y] = "0";
                 players[i].EarnPoint(int.Parse(cell));
+                ClearCell(x, y);
             }
         }
     }
@@ -258,7 +270,7 @@ public class GameManager : MonoBehaviour
     private void ClearCell(int x, int y)
     {
         boardData[x, y] = "0";
-        Destroy(boardTiles[x, y], 0.3f);
+        Destroy(boardTiles[x, y], 0.5f);
     }
 
     Vector2Int[] GetPlayerMoves()
@@ -274,7 +286,7 @@ public class GameManager : MonoBehaviour
         Vector2Int[] mvs = new Vector2Int[numPlayers];
         for (int i = 0; i < numPlayers; i++)
         {
-            var sr = new StreamReader($"{rootDir}/{playerDir[i]}/MOVE.OUT");
+            var sr = new StreamReader($"{rootDir}/{playerID[i]}/MOVE.OUT");
             var fileContents = sr.ReadToEnd();
             sr.Close();
 
@@ -298,8 +310,8 @@ public class GameManager : MonoBehaviour
             process.StartInfo.CreateNoWindow = true;
 
             // Setup executable and parameters
-            process.StartInfo.FileName = $"{rootDir}/{playerDir[i]}/{playerExe[i]}";
-            process.StartInfo.WorkingDirectory = $"{rootDir}/{playerDir[i]}/";
+            process.StartInfo.FileName = $"{rootDir}/{playerID[i]}/{playerID[i]}.EXE";
+            process.StartInfo.WorkingDirectory = $"{rootDir}/{playerID[i]}/";
 
             // Go
             process.Start();
@@ -320,7 +332,7 @@ public class GameManager : MonoBehaviour
                 lines[j + 3] = string.Join(" ", tmp);
             }
 
-            var f = File.CreateText($"{rootDir}/{playerDir[i]}/MAP.INP");
+            var f = File.CreateText($"{rootDir}/{playerID[i]}/MAP.INP");
             f.WriteLine($"{numRows} {numCols} {numMoves - currentMove}");
             f.WriteLine($"{players[i].GetPosition().x} {players[i].GetPosition().y} " +
                 $"{players[1 - i].GetPosition().x} {players[1 - i].GetPosition().y}");
