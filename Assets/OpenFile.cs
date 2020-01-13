@@ -15,13 +15,11 @@ public class OpenFile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (GameInfo.rootDir != "")
+        {
+            rootDir = GameInfo.rootDir;
+            PopulateDropdown();
+        }
     }
 
     public void ChooseDir()
@@ -36,34 +34,39 @@ public class OpenFile : MonoBehaviour
         if (rootDirs.Length == 1)
         {
             rootDir = rootDirs[0];
-            if (Directory.GetDirectories(rootDir, "Players").Length > 0 && Directory.GetDirectories(rootDir, "Maps").Length > 0)
+            PopulateDropdown();
+        }
+    }
+
+    private void PopulateDropdown()
+    {
+        if (Directory.GetDirectories(rootDir, "Players").Length > 0 && Directory.GetDirectories(rootDir, "Maps").Length > 0)
+        {
+            string[] playerDirs = Directory.GetDirectories($"{rootDir}/Players", "Team*");
+            string[] mapFiles = Directory.GetFiles($"{rootDir}/Maps", "*.txt");
+
+            if (playerDirs.Length > 0 && mapFiles.Length > 0)
             {
-                string[] playerDirs = Directory.GetDirectories($"{rootDir}/Players", "Team*");
-                string[] mapFiles = Directory.GetFiles($"{rootDir}/Maps", "*.txt");
-
-                if (playerDirs.Length > 0 && mapFiles.Length > 0)
+                List<string> playerDirsShort = new List<string>();
+                foreach (string playerDir in playerDirs)
                 {
-                    List<string> playerDirsShort = new List<string>();
-                    foreach (string playerDir in playerDirs)
-                    {
-                        string[] tmp = playerDir.Split('\\');
-                        playerDirsShort.Add(tmp[tmp.Length - 1]);
-                    }
-                    firstPlayer.AddOptions(playerDirsShort);
-                    secondPlayer.AddOptions(playerDirsShort);
-
-                    List<string> mapFilesShort = new List<string>();
-                    foreach (string mapFile in mapFiles)
-                    {
-                        mapFilesShort.Add(Path.GetFileNameWithoutExtension(mapFile));
-                    }
-                    map.AddOptions(mapFilesShort);
-
-                    map.interactable = true;
-                    firstPlayer.interactable = true;
-                    secondPlayer.interactable = true;
-                    playButton.interactable = true;
+                    string[] tmp = playerDir.Split('\\');
+                    playerDirsShort.Add(tmp[tmp.Length - 1]);
                 }
+                firstPlayer.AddOptions(playerDirsShort);
+                secondPlayer.AddOptions(playerDirsShort);
+
+                List<string> mapFilesShort = new List<string>();
+                foreach (string mapFile in mapFiles)
+                {
+                    mapFilesShort.Add(Path.GetFileNameWithoutExtension(mapFile));
+                }
+                map.AddOptions(mapFilesShort);
+
+                map.interactable = true;
+                firstPlayer.interactable = true;
+                secondPlayer.interactable = true;
+                playButton.interactable = true;
             }
         }
     }
@@ -76,6 +79,7 @@ public class OpenFile : MonoBehaviour
             secondPlayer.options[secondPlayer.value].text
         };
         GameInfo.mapConfigFileName = map.options[map.value].text;
+
         SceneManager.LoadScene("MainGame");
     }
 }

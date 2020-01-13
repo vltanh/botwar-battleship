@@ -8,6 +8,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Debug = UnityEngine.Debug;
+using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
 {
@@ -119,14 +120,14 @@ public class GameManager : MonoBehaviour
         return x <= b && x >= a;
     }
 
-    private bool CheckLegitMove(int _x, int _y)
+    private bool CheckLegitPosition(int _x, int _y)
     {
         return CheckInBound(_x, 1, numRows) && CheckInBound(_y, 1, numCols);
     }
 
     private void SendMove(int pid, int _x, int _y)
     {
-        if (CheckLegitMove(_x, _y))
+        if (CheckLegitPosition(_x, _y))
         {
             players[pid].Move(_x, _y);
         }
@@ -141,6 +142,36 @@ public class GameManager : MonoBehaviour
     private void InitializePlayerPosition()
     {
         Vector2Int[] initialPositions = GetPlayerMoves();
+
+        // TODO: >2 players
+
+        for (int i = 0; i < numPlayers; i++)
+        {
+            if (!CheckLegitPosition(initialPositions[i].x, initialPositions[i].y) ||
+                boardData[initialPositions[i].x - 1, initialPositions[i].y - 1] != "0") {
+                initialPositions[i] = GetRandomValidPosition(initialPositions[1 - i]);
+
+                Debug.Log($"Invalid initialization of [{playerID[i]}]!");
+                Debug.Log($"New initial position: [{playerID[i]}] {initialPositions[i]}.");
+            }
+        }
+
+        for (int i = 0; i < numPlayers - 1; i++)
+        {
+            for (int j = i + 1; j < numPlayers; j++)
+            {
+                if (initialPositions[i] == initialPositions[j])
+                {
+                    Vector2Int[] randomInitialPositions = GetPairValidRandomPositions();
+                    initialPositions[i] = randomInitialPositions[0];
+                    initialPositions[j] = randomInitialPositions[1];
+
+                    Debug.Log($"Collision between [{playerID[i]}] and [{playerID[j]}]!");
+                    Debug.Log($"New initial position: [{playerID[i]}] {initialPositions[i]}, [{playerID[j]}] {initialPositions[j]}.");
+                }
+            }
+        }
+
         for (int i = 0; i < numPlayers; i++)
         {
             players[i].transform.position = new Vector3(initialPositions[i].y - 1, -initialPositions[i].x + 1);
@@ -148,6 +179,24 @@ public class GameManager : MonoBehaviour
             players[i].SetID(playerID[i]);
         }
         ++currentMove;
+    }
+
+    private Vector2Int GetRandomValidPosition(Vector2Int avoid)
+    {
+        int x1 = Random.Range(1, numRows + 1), y1 = Random.Range(1, numCols + 1);
+        while (boardData[x1 - 1, y1 - 1] != "0" || (x1 == avoid.x && y1 == avoid.y))
+        {
+            x1 = Random.Range(1, numRows + 1);
+            y1 = Random.Range(1, numCols + 1);
+        }
+        return new Vector2Int(x1, y1);
+    }
+
+    private Vector2Int[] GetPairValidRandomPositions()
+    {
+        Vector2Int x1 = GetRandomValidPosition(Vector2Int.zero);
+        Vector2Int x2 = GetRandomValidPosition(x1);
+        return new Vector2Int[] { x1, x2 };
     }
 
     void Update()
@@ -305,6 +354,7 @@ public class GameManager : MonoBehaviour
 
     private void RunPlayerProgram()
     {
+        bool[] done = new bool[numPlayers];
         for (int i = 0; i < numPlayers; i++)
         {
             Process process = new Process();
@@ -320,8 +370,11 @@ public class GameManager : MonoBehaviour
 
             // Go
             process.Start();
-            bool done = process.WaitForExit(5000);
-            if (!done) process.Kill();
+            done[i] = process.WaitForExit(5000);
+            if (!done[i])
+            {
+                process.Kill();
+            }
         }
     }
 

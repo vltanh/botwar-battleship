@@ -62,27 +62,27 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9340}
-    - Class: 114
-      Script: {instanceID: 9372}
-    - Class: 114
-      Script: {instanceID: 9374}
-    - Class: 114
-      Script: {instanceID: 9380}
+      Script: {instanceID: 9354}
     - Class: 114
       Script: {instanceID: 9386}
     - Class: 114
+      Script: {instanceID: 9388}
+    - Class: 114
       Script: {instanceID: 9394}
     - Class: 114
-      Script: {instanceID: 9430}
+      Script: {instanceID: 9400}
     - Class: 114
-      Script: {instanceID: 9432}
+      Script: {instanceID: 9408}
     - Class: 114
-      Script: {instanceID: 9570}
+      Script: {instanceID: 9444}
     - Class: 114
-      Script: {instanceID: 9754}
+      Script: {instanceID: 9446}
     - Class: 114
-      Script: {instanceID: 9956}
+      Script: {instanceID: 9586}
+    - Class: 114
+      Script: {instanceID: 9778}
+    - Class: 114
+      Script: {instanceID: 9994}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -125,31 +125,31 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9372}
-    - Class: 114
-      Script: {instanceID: 9374}
-    - Class: 114
-      Script: {instanceID: 9378}
-    - Class: 114
-      Script: {instanceID: 9380}
-    - Class: 114
       Script: {instanceID: 9386}
+    - Class: 114
+      Script: {instanceID: 9388}
+    - Class: 114
+      Script: {instanceID: 9392}
     - Class: 114
       Script: {instanceID: 9394}
     - Class: 114
-      Script: {instanceID: 9402}
+      Script: {instanceID: 9400}
     - Class: 114
-      Script: {instanceID: 9420}
+      Script: {instanceID: 9408}
     - Class: 114
-      Script: {instanceID: 9422}
-    - Class: 114
-      Script: {instanceID: 9430}
-    - Class: 114
-      Script: {instanceID: 9432}
+      Script: {instanceID: 9416}
     - Class: 114
       Script: {instanceID: 9434}
     - Class: 114
-      Script: {instanceID: 10150}
+      Script: {instanceID: 9436}
+    - Class: 114
+      Script: {instanceID: 9444}
+    - Class: 114
+      Script: {instanceID: 9446}
+    - Class: 114
+      Script: {instanceID: 9448}
+    - Class: 114
+      Script: {instanceID: 10190}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -407,6 +407,12 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BasicSample
+  - hash:
+      serializedVersion: 2
       Hash: 9e70ecf91466f07d9bd649be625cae52
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -641,6 +647,12 @@ ScriptsOnlyBuild:
     className: MaterialMover
   - hash:
       serializedVersion: 2
+      Hash: 6650a204d51a53926852c34131b2f830
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CanvasSampleOpenFileText
+  - hash:
+      serializedVersion: 2
       Hash: 303ad70ce203ad874efe2965d0fbcff9
     assemblyName: Unity.Analytics.Tracker.dll
     namespaceName: UnityEngine.Analytics
@@ -701,10 +713,28 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
+      Hash: e686f3c1011429b41e0a20f13c16d626
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CanvasSampleOpenFileImage
+  - hash:
+      serializedVersion: 2
+      Hash: 6650a204d51a53926852c34131b2f830
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CanvasSampleSaveFileImage
+  - hash:
+      serializedVersion: 2
       Hash: 4fd8bf02e3089425d3502e26c44ba31a
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextContainer
+  - hash:
+      serializedVersion: 2
+      Hash: 6650a204d51a53926852c34131b2f830
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CanvasSampleOpenFileTextMultiple
   - hash:
       serializedVersion: 2
       Hash: 3593aaaf78daca6c1e759c89ec37b850
@@ -845,6 +875,12 @@ ScriptsOnlyBuild:
     className: TMP_SubMesh
   - hash:
       serializedVersion: 2
+      Hash: 6650a204d51a53926852c34131b2f830
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CanvasSampleSaveFileText
+  - hash:
+      serializedVersion: 2
       Hash: 8220b46879dc5e37db1b940c938f5744
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -855,42 +891,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: BasicSample
-  - hash:
-      serializedVersion: 2
-      Hash: 6650a204d51a53926852c34131b2f830
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: CanvasSampleOpenFileText
-  - hash:
-      serializedVersion: 2
-      Hash: e686f3c1011429b41e0a20f13c16d626
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: CanvasSampleOpenFileImage
-  - hash:
-      serializedVersion: 2
-      Hash: 6650a204d51a53926852c34131b2f830
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: CanvasSampleSaveFileImage
-  - hash:
-      serializedVersion: 2
-      Hash: 6650a204d51a53926852c34131b2f830
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: CanvasSampleOpenFileTextMultiple
-  - hash:
-      serializedVersion: 2
-      Hash: 6650a204d51a53926852c34131b2f830
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: CanvasSampleSaveFileText
   platform: 19
   scenePathNames:
   - Assets/Scenes/Menu.unity
