@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     private string[,] boardData;
 
     public string rootDir;
-    public string mapConfigPath;
+    public string mapConfigFileName;
     public string[] playerID;
 
     private GameObject[,] boardTiles;
@@ -40,7 +40,11 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SetupBoardView(rootDir + "/" + mapConfigPath);
+        rootDir = GameInfo.rootDir;
+        mapConfigFileName = GameInfo.mapConfigFileName;
+        playerID = GameInfo.playerIds;
+        
+        SetupBoardView($"{rootDir}/Maps/{mapConfigFileName}.txt");
         players = new PlayerController[numPlayers];
         for (int i = 0; i < numPlayers; i++)
         {
@@ -286,7 +290,7 @@ public class GameManager : MonoBehaviour
         Vector2Int[] mvs = new Vector2Int[numPlayers];
         for (int i = 0; i < numPlayers; i++)
         {
-            var sr = new StreamReader($"{rootDir}/{playerID[i]}/MOVE.OUT");
+            var sr = new StreamReader($"{rootDir}/Players/{playerID[i]}/MOVE.OUT");
             var fileContents = sr.ReadToEnd();
             sr.Close();
 
@@ -310,8 +314,8 @@ public class GameManager : MonoBehaviour
             process.StartInfo.CreateNoWindow = true;
 
             // Setup executable and parameters
-            process.StartInfo.FileName = $"{rootDir}/{playerID[i]}/{playerID[i]}.EXE";
-            process.StartInfo.WorkingDirectory = $"{rootDir}/{playerID[i]}/";
+            process.StartInfo.FileName = $"{rootDir}/Players/{playerID[i]}/{playerID[i]}.EXE";
+            process.StartInfo.WorkingDirectory = $"{rootDir}/Players/{playerID[i]}/";
 
             // Go
             process.Start();
@@ -332,7 +336,7 @@ public class GameManager : MonoBehaviour
                 lines[j + 3] = string.Join(" ", tmp);
             }
 
-            var f = File.CreateText($"{rootDir}/{playerID[i]}/MAP.INP");
+            var f = File.CreateText($"{rootDir}/Players/{playerID[i]}/MAP.INP");
             f.WriteLine($"{numRows} {numCols} {numMoves - currentMove}");
             f.WriteLine($"{players[i].GetPosition().x} {players[i].GetPosition().y} " +
                 $"{players[1 - i].GetPosition().x} {players[1 - i].GetPosition().y}");
