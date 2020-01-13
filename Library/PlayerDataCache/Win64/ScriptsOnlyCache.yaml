@@ -2,16 +2,25 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - GameManager
+    - OpenFile
     - PlayerController
     - Rotate
+    - ShieldController
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.Dropdown
     - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.Image
+    - UnityEngine.UI.Mask
+    - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Text
+    - UnityEngine.UI.Toggle
   sceneClasses:
     Assets/Scenes/MainGame.unity:
     - Class: 1
@@ -53,30 +62,40 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
+      Script: {instanceID: 9340}
+    - Class: 114
       Script: {instanceID: 9372}
     - Class: 114
-      Script: {instanceID: 9378}
+      Script: {instanceID: 9374}
     - Class: 114
-      Script: {instanceID: 9384}
+      Script: {instanceID: 9380}
     - Class: 114
-      Script: {instanceID: 9428}
+      Script: {instanceID: 9386}
+    - Class: 114
+      Script: {instanceID: 9394}
     - Class: 114
       Script: {instanceID: 9430}
     - Class: 114
-      Script: {instanceID: 9568}
+      Script: {instanceID: 9432}
     - Class: 114
-      Script: {instanceID: 9752}
+      Script: {instanceID: 9570}
     - Class: 114
-      Script: {instanceID: 9952}
+      Script: {instanceID: 9754}
+    - Class: 114
+      Script: {instanceID: 9956}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
+      Script: {instanceID: 0}
+    - Class: 135
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
     - Class: 198
       Script: {instanceID: 0}
     - Class: 199
+      Script: {instanceID: 0}
+    - Class: 213
       Script: {instanceID: 0}
     - Class: 222
       Script: {instanceID: 0}
@@ -85,6 +104,65 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
     - Class: 258
+      Script: {instanceID: 0}
+    Assets/Scenes/Menu.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 9372}
+    - Class: 114
+      Script: {instanceID: 9374}
+    - Class: 114
+      Script: {instanceID: 9378}
+    - Class: 114
+      Script: {instanceID: 9380}
+    - Class: 114
+      Script: {instanceID: 9386}
+    - Class: 114
+      Script: {instanceID: 9394}
+    - Class: 114
+      Script: {instanceID: 9402}
+    - Class: 114
+      Script: {instanceID: 9420}
+    - Class: 114
+      Script: {instanceID: 9422}
+    - Class: 114
+      Script: {instanceID: 9430}
+    - Class: 114
+      Script: {instanceID: 9432}
+    - Class: 114
+      Script: {instanceID: 9434}
+    - Class: 114
+      Script: {instanceID: 10150}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -129,6 +207,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: ActivationTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ShieldController
   - hash:
       serializedVersion: 2
       Hash: cf9f5cf2c3145a37ac07f00e50e460f9
@@ -521,7 +605,7 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: e40262a3391c8f92c19431af104600d2
+      Hash: e3e65284d674ad31b25d6e51e3584d6e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -623,7 +707,7 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 3593aaaf78daca6c1e759c89ec37b850
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -701,6 +785,12 @@ ScriptsOnlyBuild:
     className: WheelController
   - hash:
       serializedVersion: 2
+      Hash: e108de364a31c440c8a6fb2a491a3e6b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: OpenFile
+  - hash:
+      serializedVersion: 2
       Hash: ee0cef6caaac8ae485bfa82f000f0f7b
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -765,7 +855,44 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BasicSample
+  - hash:
+      serializedVersion: 2
+      Hash: 6650a204d51a53926852c34131b2f830
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CanvasSampleOpenFileText
+  - hash:
+      serializedVersion: 2
+      Hash: e686f3c1011429b41e0a20f13c16d626
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CanvasSampleOpenFileImage
+  - hash:
+      serializedVersion: 2
+      Hash: 6650a204d51a53926852c34131b2f830
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CanvasSampleSaveFileImage
+  - hash:
+      serializedVersion: 2
+      Hash: 6650a204d51a53926852c34131b2f830
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CanvasSampleOpenFileTextMultiple
+  - hash:
+      serializedVersion: 2
+      Hash: 6650a204d51a53926852c34131b2f830
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CanvasSampleSaveFileText
   platform: 19
   scenePathNames:
+  - Assets/Scenes/Menu.unity
   - Assets/Scenes/MainGame.unity
   playerPath: C:/Users/Naru Bibi/Documents/GitHub/GameDev/TrashCollector/build/TrashCollector.exe

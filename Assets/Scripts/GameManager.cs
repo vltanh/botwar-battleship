@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Text.RegularExpressions;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Debug = UnityEngine.Debug;
 
@@ -350,5 +351,10 @@ public class GameManager : MonoBehaviour
             }
             f.Close();
         }
+    }
+
+    public void Back()
+    {
+        SceneManager.LoadScene("Menu");
     }
 }

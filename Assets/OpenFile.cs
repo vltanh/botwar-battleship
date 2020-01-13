@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 using System.IO;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using SFB;
 
 public class OpenFile : MonoBehaviour
 {
@@ -32,33 +32,38 @@ public class OpenFile : MonoBehaviour
 
         map.interactable = firstPlayer.interactable = secondPlayer.interactable = playButton.interactable = false;
 
-        rootDir = EditorUtility.OpenFolderPanel("Choose root directory", "", "");
-        if (rootDir != "" && Directory.GetDirectories(rootDir, "Players").Length > 0 && Directory.GetDirectories(rootDir, "Maps").Length > 0) {
-            string[] playerDirs = Directory.GetDirectories($"{rootDir}/Players", "Team*");
-            string[] mapFiles = Directory.GetFiles($"{rootDir}/Maps", "*.txt");
-
-            if (playerDirs.Length > 0 && mapFiles.Length > 0)
+        string[] rootDirs = StandaloneFileBrowser.OpenFolderPanel("Choose root directory", "", false);
+        if (rootDirs.Length == 1)
+        {
+            rootDir = rootDirs[0];
+            if (Directory.GetDirectories(rootDir, "Players").Length > 0 && Directory.GetDirectories(rootDir, "Maps").Length > 0)
             {
-                List<string> playerDirsShort = new List<string>();
-                foreach (string playerDir in playerDirs)
-                {
-                    string[] tmp = playerDir.Split('\\');
-                    playerDirsShort.Add(tmp[tmp.Length - 1]);
-                }
-                firstPlayer.AddOptions(playerDirsShort);
-                secondPlayer.AddOptions(playerDirsShort);
+                string[] playerDirs = Directory.GetDirectories($"{rootDir}/Players", "Team*");
+                string[] mapFiles = Directory.GetFiles($"{rootDir}/Maps", "*.txt");
 
-                List<string> mapFilesShort = new List<string>();
-                foreach (string mapFile in mapFiles)
+                if (playerDirs.Length > 0 && mapFiles.Length > 0)
                 {
-                    mapFilesShort.Add(Path.GetFileNameWithoutExtension(mapFile));
-                }
-                map.AddOptions(mapFilesShort);
+                    List<string> playerDirsShort = new List<string>();
+                    foreach (string playerDir in playerDirs)
+                    {
+                        string[] tmp = playerDir.Split('\\');
+                        playerDirsShort.Add(tmp[tmp.Length - 1]);
+                    }
+                    firstPlayer.AddOptions(playerDirsShort);
+                    secondPlayer.AddOptions(playerDirsShort);
 
-                map.interactable = true;
-                firstPlayer.interactable = true;
-                secondPlayer.interactable = true;
-                playButton.interactable = true;
+                    List<string> mapFilesShort = new List<string>();
+                    foreach (string mapFile in mapFiles)
+                    {
+                        mapFilesShort.Add(Path.GetFileNameWithoutExtension(mapFile));
+                    }
+                    map.AddOptions(mapFilesShort);
+
+                    map.interactable = true;
+                    firstPlayer.interactable = true;
+                    secondPlayer.interactable = true;
+                    playButton.interactable = true;
+                }
             }
         }
     }
