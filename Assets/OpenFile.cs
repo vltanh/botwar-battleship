@@ -15,7 +15,7 @@ public class OpenFile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (GameInfo.rootDir != "")
+        if (GameInfo.rootDir != null && GameInfo.rootDir != "")
         {
             rootDir = GameInfo.rootDir;
             PopulateDropdown();
