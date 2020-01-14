@@ -63,7 +63,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Turn and Tile based framework\Scripts\Editor\SimpleMenuItems.cs" />
+    <Compile Include="Assets\support\FlatKit\Demos\Common\Scripts\Motion\Editor\LinearMotionEditor.cs" />
+    <Compile Include="Assets\support\FlatKit\Shaders\GradientSkybox\Editor\GradientSkyboxEditor.cs" />
+    <Compile Include="Assets\support\FlatKit\Shaders\StylizedSurface\Editor\StylizedSurfaceEditor.cs" />
+    <Compile Include="Assets\support\LowPolyWater\Editor\LowPolyWaterInspector.cs" />
+    <Compile Include="Assets\support\LowPolyWater\Editor\LowPolyWaterShaderGUI.cs" />
+    <Compile Include="Assets\support\Mirza Beig\Editor Extensions\_Common\Editor\ParticleEditorUtility.cs" />
+    <Compile Include="Assets\support\Mirza Beig\Editor Extensions\Effects\Particle Twister\Editor\ParticleTwisterEditorWindow.cs" />
+    <Compile Include="Assets\support\Mirza Beig\Editor Extensions\Effects\Particle Twister\Editor\ParticleTwisterExtensions.cs" />
+    <Compile Include="Assets\support\Mirza Beig\Editor Extensions\Utilities\Multi-Asset Renamer\Editor\MultiAssetRenamer.cs" />
+    <Compile Include="Assets\support\Mirza Beig\Editor Extensions\Utilities\Particle Playback\Editor\ParticlePlayback.cs" />
+    <Compile Include="Assets\support\Mirza Beig\Editor Extensions\Utilities\Particle Playback\Editor\ParticlePlaybackEditorWindow.cs" />
+    <Compile Include="Assets\support\Mirza Beig\Editor Extensions\Utilities\Particle Playback\Editor\ParticlePlaybackExtensions.cs" />
+    <Compile Include="Assets\support\Mirza Beig\Editor Extensions\Utilities\Particle Scaler\Editor\ParticleScalerEditorWindow.cs" />
+    <Compile Include="Assets\support\Mirza Beig\Editor Extensions\Utilities\Particle Scaler\Editor\ParticleScalerExtensions.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Naru Bibi/Documents/GitHub/GameDev/TrashCollector/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
@@ -285,6 +298,12 @@
     </Reference>
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
+    </Reference>
+    <Reference Include="Ookii.Dialogs">
+      <HintPath>C:/Users/Naru Bibi/Documents/GitHub/GameDev/TrashCollector/Assets/StandaloneFileBrowser/Plugins/Ookii.Dialogs.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <HintPath>C:/Users/Naru Bibi/Documents/GitHub/GameDev/TrashCollector/Assets/StandaloneFileBrowser/Plugins/System.Windows.Forms.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>C:/Users/Naru Bibi/Documents/GitHub/GameDev/TrashCollector/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>

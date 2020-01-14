@@ -2,8 +2,17 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - GameManager
+    - LowPolyWater
+    - MirzaBeig.ParticleSystems.AnimatedLight
+    - MirzaBeig.ParticleSystems.ParticleSystems
+    - MirzaBeig.ParticleSystems.Rotator
+    - MirzaBeig.Scripting.Effects.AttractionParticleAffector
+    - MirzaBeig.Scripting.Effects.TurbulenceParticleAffector
+    - MirzaBeig.Scripting.Effects.VortexParticleAffector
     - OpenFile
     - PlayerController
+    - PolygonArsenal.PolygonRotation
+    - PolygonArsenal.PolygonSoundSpawn
     - Rotate
     - ShieldController
     UnityEditor.TestRunner.dll:
@@ -47,6 +56,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 84
       Script: {instanceID: 0}
     - Class: 89
@@ -62,27 +75,45 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9354}
+      Script: {instanceID: 9356}
     - Class: 114
-      Script: {instanceID: 9386}
+      Script: {instanceID: 9382}
     - Class: 114
-      Script: {instanceID: 9388}
+      Script: {instanceID: 9436}
     - Class: 114
-      Script: {instanceID: 9394}
+      Script: {instanceID: 9472}
     - Class: 114
-      Script: {instanceID: 9400}
+      Script: {instanceID: 9474}
     - Class: 114
-      Script: {instanceID: 9408}
+      Script: {instanceID: 9480}
     - Class: 114
-      Script: {instanceID: 9444}
+      Script: {instanceID: 9486}
     - Class: 114
-      Script: {instanceID: 9446}
+      Script: {instanceID: 9494}
     - Class: 114
-      Script: {instanceID: 9586}
+      Script: {instanceID: 9530}
     - Class: 114
-      Script: {instanceID: 9778}
+      Script: {instanceID: 9532}
     - Class: 114
-      Script: {instanceID: 9994}
+      Script: {instanceID: 9678}
+    - Class: 114
+      Script: {instanceID: 9796}
+    - Class: 114
+      Script: {instanceID: 9800}
+    - Class: 114
+      Script: {instanceID: 9892}
+    - Class: 114
+      Script: {instanceID: 9918}
+    - Class: 114
+      Script: {instanceID: 9920}
+    - Class: 114
+      Script: {instanceID: 9948}
+    - Class: 114
+      Script: {instanceID: 10144}
+    - Class: 114
+      Script: {instanceID: 10152}
+    - Class: 114
+      Script: {instanceID: 10198}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -118,38 +149,42 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 72
+      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
       Script: {instanceID: 0}
+    - Class: 109
+      Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9386}
+      Script: {instanceID: 9472}
     - Class: 114
-      Script: {instanceID: 9388}
+      Script: {instanceID: 9474}
     - Class: 114
-      Script: {instanceID: 9392}
+      Script: {instanceID: 9478}
     - Class: 114
-      Script: {instanceID: 9394}
+      Script: {instanceID: 9480}
     - Class: 114
-      Script: {instanceID: 9400}
+      Script: {instanceID: 9486}
     - Class: 114
-      Script: {instanceID: 9408}
+      Script: {instanceID: 9494}
     - Class: 114
-      Script: {instanceID: 9416}
+      Script: {instanceID: 9502}
     - Class: 114
-      Script: {instanceID: 9434}
+      Script: {instanceID: 9520}
     - Class: 114
-      Script: {instanceID: 9436}
+      Script: {instanceID: 9522}
     - Class: 114
-      Script: {instanceID: 9444}
+      Script: {instanceID: 9530}
     - Class: 114
-      Script: {instanceID: 9446}
+      Script: {instanceID: 9532}
     - Class: 114
-      Script: {instanceID: 9448}
+      Script: {instanceID: 9534}
     - Class: 114
-      Script: {instanceID: 10190}
+      Script: {instanceID: 10358}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -173,6 +208,12 @@ ScriptsOnlyBuild:
     className: Rotator
   - hash:
       serializedVersion: 2
+      Hash: abda4ea65792ffcf5d8dd50984aae797
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MirzaBeig.Scripting.Effects
+    className: TurbulenceParticleAffector
+  - hash:
+      serializedVersion: 2
       Hash: 984dcc0ba3707b7691fbdca8ff508d28
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -191,10 +232,22 @@ ScriptsOnlyBuild:
     className: TMP_Dropdown
   - hash:
       serializedVersion: 2
+      Hash: c8f350cf8b787f5689c2dd7d5f44990b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MirzaBeig.Scripting.Effects
+    className: AttractionParticleAffector
+  - hash:
+      serializedVersion: 2
       Hash: e7a73f5f78ba6445195ec23b74a1ce2d
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_ScrollbarEventHandler
+  - hash:
+      serializedVersion: 2
+      Hash: 71e41e59a9b9d3d35a3f2005e6919d13
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: destroyMe
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -213,6 +266,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ShieldController
+  - hash:
+      serializedVersion: 2
+      Hash: a96c8a8ce1a3c3fe7925b4276444f128
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: LowPolyWaterDemo
+    className: DemoFreeFlyCamera
   - hash:
       serializedVersion: 2
       Hash: cf9f5cf2c3145a37ac07f00e50e460f9
@@ -413,10 +472,22 @@ ScriptsOnlyBuild:
     className: BasicSample
   - hash:
       serializedVersion: 2
+      Hash: 5b07d52e4e9eab4b514e3350e281a5aa
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: FlatKit
+    className: FogImageEffect
+  - hash:
+      serializedVersion: 2
       Hash: 9e70ecf91466f07d9bd649be625cae52
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_InputField
+  - hash:
+      serializedVersion: 2
+      Hash: 79f1e4d923cfc803b34c05ae2cb73dac
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MirzaBeig.ParticleSystems
+    className: DestroyAfterTime
   - hash:
       serializedVersion: 2
       Hash: cf9f5cf2c3145a37ac07f00e50e460f9
@@ -623,6 +694,24 @@ ScriptsOnlyBuild:
     className: SignalAsset
   - hash:
       serializedVersion: 2
+      Hash: 1ee5b3aa357727f70a8d55e82eebbe37
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MirzaBeig.Scripting.Effects
+    className: AttractionParticleAffectorGPU
+  - hash:
+      serializedVersion: 2
+      Hash: 42499b36e5db23b809157b5a00b8029d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PolygonLightFlicker
+  - hash:
+      serializedVersion: 2
+      Hash: be8ae91394b950607a13738adc609a7a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MirzaBeig.ParticleSystems.Demos
+    className: LoopingParticleSystemsManager
+  - hash:
+      serializedVersion: 2
       Hash: f08a111e17bb701f9c9ec57bb78d9920
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -641,10 +730,28 @@ ScriptsOnlyBuild:
     className: AnimationPlayableAsset
   - hash:
       serializedVersion: 2
+      Hash: e4a1a2881f247d4d5c2391a545375853
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: PolygonArsenal
+    className: PolygonSoundSpawn
+  - hash:
+      serializedVersion: 2
+      Hash: a274c7306f18a7b63166fdd7f3e69f29
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MirzaBeig.ParticleSystems
+    className: AnimatedLight
+  - hash:
+      serializedVersion: 2
       Hash: 9669178b8ee47e79141ed8519e9595fb
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MaterialMover
+  - hash:
+      serializedVersion: 2
+      Hash: edfa918b42ecea3a0368d8a2e18b81eb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MirzaBeig.ParticleSystems.Demos
+    className: DemoManager
   - hash:
       serializedVersion: 2
       Hash: 6650a204d51a53926852c34131b2f830
@@ -671,6 +778,18 @@ ScriptsOnlyBuild:
     className: ControlPlayableAsset
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MirzaBeig.ParticleSystems
+    className: DestroyOnParticlesDead
+  - hash:
+      serializedVersion: 2
+      Hash: 3ea3ccdd111d7106136205f0e63efe69
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MirzaBeig.ParticleSystems.Demos
+    className: FollowMouse
+  - hash:
+      serializedVersion: 2
       Hash: b8a5e8091ab0b8861d2add371082c5e0
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -689,16 +808,58 @@ ScriptsOnlyBuild:
     className: ControlTrack
   - hash:
       serializedVersion: 2
+      Hash: 79566861074b80c5467fa81dddcf4f5a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: PolygonArsenal
+    className: PolygonRotation
+  - hash:
+      serializedVersion: 2
+      Hash: 09dce8c996d823c95600c5a99185b9d0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MirzaBeig.ParticleSystems
+    className: Rotator
+  - hash:
+      serializedVersion: 2
+      Hash: 8d20af9b03a48c0ff9bfc901f720e746
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MirzaBeig.Scripting.Effects
+    className: VortexParticleAffector
+  - hash:
+      serializedVersion: 2
+      Hash: c85a9f8941f9919a6d8c9de2199bb664
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MirzaBeig.ParticleSystems
+    className: DestroyOnTrailsDestroyed
+  - hash:
+      serializedVersion: 2
       Hash: b3ab2106268377ffe25dd18ac23dca28
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_Asset
   - hash:
       serializedVersion: 2
+      Hash: edd87449c1b05645c17d8ee0aa33c536
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MirzaBeig.ParticleSystems.Demos
+    className: DemoManager_XPTitles
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: SignalTrack
+  - hash:
+      serializedVersion: 2
+      Hash: b422ed7ac26ba16231a36022a35b8011
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MirzaBeig.Scripting.Effects
+    className: VortexParticleAffectorGPU
+  - hash:
+      serializedVersion: 2
+      Hash: 1c6c0c4161df236c39214b9382454ea4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MirzaBeig.Shaders.ImageEffects
+    className: Sharpen
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -713,10 +874,34 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
+      Hash: 3d60c63def5dc36f0a8b33a1b07431be
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: FlatKit
+    className: LinearMotion
+  - hash:
+      serializedVersion: 2
+      Hash: 9ed2f3411fdddfc75bfa71af2121325d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MirzaBeig.ParticleSystems
+    className: TransformNoise
+  - hash:
+      serializedVersion: 2
       Hash: e686f3c1011429b41e0a20f13c16d626
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CanvasSampleOpenFileImage
+  - hash:
+      serializedVersion: 2
+      Hash: 32fc31273cd84b8a99da9b55450fcf9c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MirzaBeig.Scripting.Effects
+    className: ParticleLights
+  - hash:
+      serializedVersion: 2
+      Hash: e100661b18ac56d5aa8b5b405b2a4818
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MirzaBeig.ParticleSystems
+    className: RendererSortingOrder
   - hash:
       serializedVersion: 2
       Hash: 6650a204d51a53926852c34131b2f830
@@ -725,10 +910,34 @@ ScriptsOnlyBuild:
     className: CanvasSampleSaveFileImage
   - hash:
       serializedVersion: 2
+      Hash: e888ef4305b8fac9cd5510fefa0636bf
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: PolygonArsenal
+    className: PolygonFireProjectile
+  - hash:
+      serializedVersion: 2
+      Hash: afc5b93a7b192de2dcb3832fe35a5c7e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MirzaBeig.ParticleSystems
+    className: ParticleSystemsSimulationSpeed
+  - hash:
+      serializedVersion: 2
       Hash: 4fd8bf02e3089425d3502e26c44ba31a
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextContainer
+  - hash:
+      serializedVersion: 2
+      Hash: 8ec0e792978bd03f071b8a441f3cbb19
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: PolygonArsenal
+    className: PolygonLoopScript
+  - hash:
+      serializedVersion: 2
+      Hash: b6f2a60dd09eb270d58d6224e03400ee
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MirzaBeig.ParticleSystems.Demos
+    className: FPSTest
   - hash:
       serializedVersion: 2
       Hash: 6650a204d51a53926852c34131b2f830
@@ -737,10 +946,28 @@ ScriptsOnlyBuild:
     className: CanvasSampleOpenFileTextMultiple
   - hash:
       serializedVersion: 2
-      Hash: 3593aaaf78daca6c1e759c89ec37b850
+      Hash: ad44cc42135579e11b0bf25dd8ebfd95
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MirzaBeig.Scripting.Effects
+    className: TurbulenceParticleAffectorGPU
+  - hash:
+      serializedVersion: 2
+      Hash: 987f753928ab3c8c0e0ff88db795a345
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LowPolyWater
+  - hash:
+      serializedVersion: 2
+      Hash: 39400e9c60e00a8659e06ae4a5a331f4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MirzaBeig.ParticleSystems
+    className: ParticleSystems
   - hash:
       serializedVersion: 2
       Hash: 3f8d7b92a6be3c715e55d5cfa7cc8384
@@ -809,10 +1036,28 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
+      Hash: 2890c468cf196dca883ea02bde96343e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: PolygonArsenal
+    className: PolygonLightFade
+  - hash:
+      serializedVersion: 2
       Hash: c0f472e6eb495e2bb58407c57197f75e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: WheelController
+  - hash:
+      serializedVersion: 2
+      Hash: 96fcfd362966a750137e12411dcb554b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: particleColorChanger
+  - hash:
+      serializedVersion: 2
+      Hash: dee9b4eb8f7718012c74e0fc99045305
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: FlatKit
+    className: CameraMouseOrbit
   - hash:
       serializedVersion: 2
       Hash: e108de364a31c440c8a6fb2a491a3e6b
@@ -827,10 +1072,22 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
+      Hash: c50f34d71453380a100b36789924740c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: FlatKit
+    className: OutlineImageEffect
+  - hash:
+      serializedVersion: 2
       Hash: 516824a435828eadd660ef2f1658a48e
     assemblyName: Unity.Analytics.DataPrivacy.dll
     namespaceName: UnityEngine.Analytics
     className: DataPrivacyButton
+  - hash:
+      serializedVersion: 2
+      Hash: de6cf3ba7095ee435709ee8c2e417dd7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: FlatKit
+    className: UvScroller
   - hash:
       serializedVersion: 2
       Hash: f336e086360abe49a3323e5f1583c35a
@@ -845,16 +1102,64 @@ ScriptsOnlyBuild:
     className: ChestDemo
   - hash:
       serializedVersion: 2
+      Hash: 51dbbb0deaf251219b00c7d1ee26d7f6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MirzaBeig.ParticleSystems.Demos
+    className: FPSDisplay
+  - hash:
+      serializedVersion: 2
+      Hash: b5aaf686465544e9e949e46e293afee1
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PolygonOrbit
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MirzaBeig.ParticleSystems
+    className: IgnoreTimeScale
+  - hash:
+      serializedVersion: 2
+      Hash: e84e2691656c76cd0a933b9ce7c70de3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: PolygonArsenal
+    className: PolygonProjectileScript
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: MarkerTrack
   - hash:
       serializedVersion: 2
+      Hash: 56c90168bc19fe9aee4ba7e6b19350e3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: PolygonArsenal
+    className: PolygonBeamScript
+  - hash:
+      serializedVersion: 2
+      Hash: da5105de6a6cfbde50e7cdc590407abd
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: instantiateEffectCaller
+  - hash:
+      serializedVersion: 2
       Hash: d791aa6007fa3640be1164ea75bb087d
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_StyleSheet
+  - hash:
+      serializedVersion: 2
+      Hash: 72b8785d423a9c414f50591f4932b16f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MirzaBeig.Scripting.Effects
+    className: TurbulenceParticleAffectorMT
+  - hash:
+      serializedVersion: 2
+      Hash: 8e5e00ca42eeebc1eae2f91fabb1ee02
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: PolygonArsenal
+    className: PolygonButtonScript
   - hash:
       serializedVersion: 2
       Hash: 5372ed2ce39229b1ac910757999a8be2
@@ -867,6 +1172,24 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_ColorGradient
+  - hash:
+      serializedVersion: 2
+      Hash: c3664a52ce5b1e1e40f8a95a67e06e88
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MirzaBeig.ParticleSystems.Demos
+    className: OneshotParticleSystemsManager
+  - hash:
+      serializedVersion: 2
+      Hash: b6922d55153c72cd544a88a0ee8b31f0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MirzaBeig.ParticleSystems.Demos
+    className: FPSDisplay2
+  - hash:
+      serializedVersion: 2
+      Hash: be8ae91394b950607a13738adc609a7a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MirzaBeig.ParticleSystems.Demos
+    className: ParticleManager
   - hash:
       serializedVersion: 2
       Hash: 8649814970b42d345b89944b862453cc
@@ -885,6 +1208,24 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: SignalEmitter
+  - hash:
+      serializedVersion: 2
+      Hash: c85a9f8941f9919a6d8c9de2199bb664
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MirzaBeig.ParticleSystems
+    className: TrailRenderers
+  - hash:
+      serializedVersion: 2
+      Hash: 46280057aba92e5945195d40246a7bdf
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: PolygonArsenal
+    className: PolygonSceneSelect
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: MirzaBeig.Shaders.ImageEffects
+    className: IEBase
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb

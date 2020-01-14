@@ -12,6 +12,8 @@ using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
 {
+    private const float PROCESS_WAITTIME = 2.0f;
+
     public Text[] playerIDText;
     public Text[] playerScoreText;
     public Text stepCountText;
@@ -39,6 +41,8 @@ public class GameManager : MonoBehaviour
 
     public int currentMove = 0;
 
+    Vector2Int[] previousPositions, nextPositions;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,16 +54,23 @@ public class GameManager : MonoBehaviour
         players = new PlayerController[numPlayers];
         for (int i = 0; i < numPlayers; i++)
         {
-            players[i] = Instantiate(playerPrefabs[i], new Vector3(0, 0, 100), Quaternion.identity).GetComponent<PlayerController>();
+            players[i] = Instantiate(playerPrefabs[i], new Vector3(100, 100, 100), Quaternion.identity).GetComponent<PlayerController>();
         }
         SetupSceneView();
+
+        previousPositions = new Vector2Int[numPlayers];
+        nextPositions = new Vector2Int[numPlayers];
+        for (int i = 0; i < numPlayers; i++)
+        {
+            previousPositions[i] = nextPositions[i] = Vector2Int.zero;
+        }
     }
 
     private void SetupSceneView()
     {
-        Camera.main.transform.position = new Vector3((numCols - 1.0f) / 2.0f, -numRows, -0.9f * numRows);
-        Camera.main.transform.rotation = Quaternion.Euler(-30, 0, 0);
-        Instantiate(lightPrefab, new Vector3(), Quaternion.Euler(11.0f, 11.0f, 0.0f));
+        Camera.main.transform.position = new Vector3((numCols - 1.0f) / 2.0f, 0.9f * numRows, -numRows);
+        Camera.main.transform.rotation = Quaternion.Euler(60, 0, 0);
+        //Instantiate(lightPrefab, new Vector3(), Quaternion.Euler(11.0f, 11.0f, 0.0f));
     }
 
     private void SetupBoardView(string config_path)
@@ -71,18 +82,18 @@ public class GameManager : MonoBehaviour
         {
             for (int j = 0; j < numCols; j++)
             {
-                Instantiate(groundTilePrefab, new Vector3(j, -i), Quaternion.identity);
+                Instantiate(groundTilePrefab, new Vector3(j, 0, -i), Quaternion.Euler(180, 0, 0));
                 if (boardData[i, j] == "W")
                 {
-                    boardTiles[i, j] = Instantiate(cloudPrefab, new Vector3(j, -i), Quaternion.identity);
+                    boardTiles[i, j] = Instantiate(cloudPrefab, new Vector3(j, 0, -i), Quaternion.identity);
                 }
                 else if (boardData[i, j] == "M")
                 {
-                    boardTiles[i, j] = Instantiate(shieldPrefab, new Vector3(j, -i), Quaternion.identity);
+                    boardTiles[i, j] = Instantiate(shieldPrefab, new Vector3(j, 0, -i), Quaternion.identity);
                 }
                 else if (boardData[i, j] != "0")
                 {
-                    boardTiles[i, j] = Instantiate(goldPrefab, new Vector3(j, -i), Quaternion.identity);
+                    boardTiles[i, j] = Instantiate(goldPrefab, new Vector3(j, 0, -i), Quaternion.identity);
                     boardTiles[i, j].transform.GetChild(1).gameObject.GetComponent<TextMesh>().text = boardData[i, j];
                 }
             }
@@ -139,9 +150,11 @@ public class GameManager : MonoBehaviour
         { KeyCode.W, KeyCode.S, KeyCode.D, KeyCode.A }
     };
 
-    private void InitializePlayerPosition()
+    private IEnumerator InitializePlayerPosition()
     {
-        Vector2Int[] initialPositions = GetPlayerMoves();
+        StartCoroutine(GetPlayerMoves());
+        yield return new WaitForSeconds(PROCESS_WAITTIME);
+        Vector2Int[] initialPositions = nextPositions;
 
         // TODO: >2 players
 
@@ -174,7 +187,7 @@ public class GameManager : MonoBehaviour
 
         for (int i = 0; i < numPlayers; i++)
         {
-            players[i].transform.position = new Vector3(initialPositions[i].y - 1, -initialPositions[i].x + 1);
+            players[i].transform.position = new Vector3(initialPositions[i].y - 1, 0, -initialPositions[i].x + 1);
             players[i].SetPosition(initialPositions[i]);
             players[i].SetID(playerID[i]);
         }
@@ -211,76 +224,79 @@ public class GameManager : MonoBehaviour
         {
             if (currentMove == 0)
             {
-                InitializePlayerPosition();
+                StartCoroutine(InitializePlayerPosition());
             }
             else
             {
-                PlayNextMove();
+                StartCoroutine(PlayNextMove());
             }
         }
 
-        //for (int i = 0; i < numPlayers; i++)
-        //{
-        //    Vector2Int curPos = players[i].GetPosition();
-        //    int x = curPos.x, y = curPos.y;
-        //    if (Input.GetKeyDown(moveCmdMap[i, 3]))
-        //    {
-        //        Vector2Int[] previousPositions = {
-        //            players[0].GetPosition() - Vector2Int.one ,
-        //            players[1].GetPosition() - Vector2Int.one
-        //        };
-        //        SendMove(i, x, y - 1);
-        //        ProcessAfterMove(previousPositions);
-        //    }
-        //    else if (Input.GetKeyDown(moveCmdMap[i, 2]))
-        //    {
-        //        Vector2Int[] previousPositions = {
-        //            players[0].GetPosition() - Vector2Int.one ,
-        //            players[1].GetPosition() - Vector2Int.one
-        //        };
-        //        SendMove(i, x, y + 1);
-        //        ProcessAfterMove(previousPositions);
-        //    }
-        //    else if (Input.GetKeyDown(moveCmdMap[i, 0]))
-        //    {
-        //        Vector2Int[] previousPositions = {
-        //            players[0].GetPosition() - Vector2Int.one ,
-        //            players[1].GetPosition() - Vector2Int.one
-        //        };
-        //        SendMove(i, x - 1, y);
-        //        ProcessAfterMove(previousPositions);
-        //    }
-        //    else if (Input.GetKeyDown(moveCmdMap[i, 1]))
-        //    {
-        //        Vector2Int[] previousPositions = {
-        //            players[0].GetPosition() - Vector2Int.one ,
-        //            players[1].GetPosition() - Vector2Int.one
-        //        };
-        //        SendMove(i, x + 1, y);
-        //        ProcessAfterMove(previousPositions);
-        //    }
-        //}
+        for (int i = 0; i < numPlayers; i++)
+        {
+            Vector2Int curPos = players[i].GetPosition();
+            int x = curPos.x, y = curPos.y;
+            if (Input.GetKeyDown(moveCmdMap[i, 3]))
+            {
+                Vector2Int[] previousPositions = {
+                    players[0].GetPosition() - Vector2Int.one ,
+                    players[1].GetPosition() - Vector2Int.one
+                };
+                SendMove(i, x, y - 1);
+                StartCoroutine(ProcessAfterMove(previousPositions));
+            }
+            else if (Input.GetKeyDown(moveCmdMap[i, 2]))
+            {
+                Vector2Int[] previousPositions = {
+                    players[0].GetPosition() - Vector2Int.one ,
+                    players[1].GetPosition() - Vector2Int.one
+                };
+                SendMove(i, x, y + 1);
+                StartCoroutine(ProcessAfterMove(previousPositions));
+            }
+            else if (Input.GetKeyDown(moveCmdMap[i, 0]))
+            {
+                Vector2Int[] previousPositions = {
+                    players[0].GetPosition() - Vector2Int.one ,
+                    players[1].GetPosition() - Vector2Int.one
+                };
+                SendMove(i, x - 1, y);
+                StartCoroutine(ProcessAfterMove(previousPositions));
+            }
+            else if (Input.GetKeyDown(moveCmdMap[i, 1]))
+            {
+                Vector2Int[] previousPositions = {
+                    players[0].GetPosition() - Vector2Int.one ,
+                    players[1].GetPosition() - Vector2Int.one
+                };
+                SendMove(i, x + 1, y);
+                StartCoroutine(ProcessAfterMove(previousPositions));
+            }
+        }
     }
 
-    private void PlayNextMove()
+    private IEnumerator PlayNextMove()
     {
-        Vector2Int[] previousPositions = {
-            players[0].GetPosition() - Vector2Int.one ,
-            players[1].GetPosition() - Vector2Int.one
-        };
+        //Vector2Int[] previousPositions = {
+        //    players[0].GetPosition() - Vector2Int.one ,
+        //    players[1].GetPosition() - Vector2Int.one
+        //};
 
-        Vector2Int[] cmds = GetPlayerMoves();
+        previousPositions = nextPositions;
+        StartCoroutine(GetPlayerMoves());
+        yield return new WaitForSeconds(PROCESS_WAITTIME);
         for (int i = 0; i < numPlayers; ++i)
         {
-            SendMove(i, cmds[i].x, cmds[i].y);
+            SendMove(i, nextPositions[i].x, nextPositions[i].y);
         }
-        ProcessAfterMove(previousPositions);
+        StartCoroutine(ProcessAfterMove(previousPositions));
 
         ++currentMove;
     }
 
-    private void ProcessAfterMove(Vector2Int[] previousPositions)
+    private IEnumerator ProcessAfterMove(Vector2Int[] previousPositions)
     {
+        yield return new WaitForSeconds(0.3f);
         Vector2Int[] currentPositions = {
             players[0].GetPosition() - Vector2Int.one ,
             players[1].GetPosition() - Vector2Int.one
@@ -311,7 +327,7 @@ public class GameManager : MonoBehaviour
             }
             else if (cell == "W")
             {
-                players[i].EncounterTrap();
+                players[i].EncounterTrap(boardTiles[x, y]);
             }
             else if (cell != "0")
             {
@@ -324,20 +340,19 @@ public class GameManager : MonoBehaviour
     private void ClearCell(int x, int y)
     {
         boardData[x, y] = "0";
-        Destroy(boardTiles[x, y], 0.5f);
+        Destroy(boardTiles[x, y], 0.1f);
     }
 
-    Vector2Int[] GetPlayerMoves()
+    IEnumerator GetPlayerMoves()
     {
         GenerateMap();
         RunPlayerProgram();
-        Vector2Int[] mvs = _GetPlayerMoves();
-        return mvs;
+        yield return new WaitForSeconds(PROCESS_WAITTIME);
+         _GetPlayerMoves();
     }
 
-    private Vector2Int[] _GetPlayerMoves()
+    private void _GetPlayerMoves()
     {
-        Vector2Int[] mvs = new Vector2Int[numPlayers];
         for (int i = 0; i < numPlayers; i++)
         {
             var sr = new StreamReader($"{rootDir}/Players/{playerID[i]}/MOVE.OUT");
@@ -346,10 +361,9 @@ public class GameManager : MonoBehaviour
 
             var lines = fileContents.Split('\n');
             string[] line = lines[0].Split(' ');
-            mvs[i] = new Vector2Int(int.Parse(line[0]), int.Parse(line[1]));
-            Debug.Log(mvs[i]);
+            nextPositions[i] = new Vector2Int(int.Parse(line[0]), int.Parse(line[1]));
+            Debug.Log(nextPositions[i]);
         }
-        return mvs;
     }
 
     private void RunPlayerProgram()
@@ -360,7 +374,7 @@ public class GameManager : MonoBehaviour
             Process process = new Process();
 
             // Stop the process from opening a new window
-            // process.StartInfo.RedirectStandardOutput = true;
+            process.StartInfo.RedirectStandardOutput = true;
             process.StartInfo.UseShellExecute = false;
             process.StartInfo.CreateNoWindow = true;
 
@@ -370,11 +384,11 @@ public class GameManager : MonoBehaviour
 
             // Go
             process.Start();
-            done[i] = process.WaitForExit(5000);
-            if (!done[i])
-            {
-                process.Kill();
-            }
+            //done[i] = process.WaitForExit(5000);
+            //if (!done[i])
+            //{
+            //    process.Kill();
+            //}
         }
     }
 

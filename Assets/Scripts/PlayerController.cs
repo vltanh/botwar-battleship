@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     bool isShield;
     bool functioning;
 
-    public GameObject shieldPrefab;
+    public GameObject shieldPrefab, smokePrefab, startAuraPrefab;
     public GameObject shield;
 
     private void Start()
@@ -29,17 +29,17 @@ public class PlayerController : MonoBehaviour
     int[] next180Orientation = { 1, 0, 3, 2 };
     Vector3[] direction =
     {
-        Vector3.up,
-        Vector3.down,
+        Vector3.forward,
+        Vector3.back,
         Vector3.right,
         Vector3.left
     };
     Quaternion[] oriAngle =
     {
         Quaternion.Euler(0, 0, 0),
-        Quaternion.Euler(0, 0, 180),
-        Quaternion.Euler(0, 0, -90),
-        Quaternion.Euler(0, 0, 90)
+        Quaternion.Euler(0, 180, 0),
+        Quaternion.Euler(0, 90, 0),
+        Quaternion.Euler(0, -90, 0)
     };
 
     // moveMap[ori, move]
@@ -64,6 +64,7 @@ public class PlayerController : MonoBehaviour
     {
         x = pos.x;
         y = pos.y;
+        Instantiate(startAuraPrefab, new Vector3(y - 1, 0, -x + 1), Quaternion.identity);
     }
 
     public Vector2Int GetPosition()
@@ -87,6 +88,11 @@ public class PlayerController : MonoBehaviour
         if (functioning)
         {
             Debug.Log($"[{id}] dies.");
+
+            // Explode yourself here!
+            transform.Rotate(Vector3.right * 180);
+            Instantiate(smokePrefab, new Vector3(y - 1, 0, -x + 1), Quaternion.identity);
+
             functioning = false;
         }
     }
@@ -128,17 +134,17 @@ public class PlayerController : MonoBehaviour
             else if (move == 1)
             {
                 currentOrientation = next180Orientation[currentOrientation];
-                StartCoroutine(Rotate(Vector3.forward * 180, 0.2f, 0.1f));
+                StartCoroutine(Rotate(Vector3.down * 180, 0.2f, 0.1f));
             }
             else if (move == 2)
             {
                 currentOrientation = nextCWOrientation[currentOrientation];
-                StartCoroutine(Rotate(Vector3.forward * -90, 0.15f, 0.15f));
+                StartCoroutine(Rotate(Vector3.down * -90, 0.15f, 0.15f));
             }
             else if (move == 3)
             {
                 currentOrientation = nextCCWOrientation[currentOrientation];
-                StartCoroutine(Rotate(Vector3.forward * 90, 0.15f, 0.15f));
+                StartCoroutine(Rotate(Vector3.down * 90, 0.15f, 0.15f));
             }
         }
     }
@@ -165,7 +171,7 @@ public class PlayerController : MonoBehaviour
             transform.position = Vector3.Lerp(fromPos, toPos, t);
             yield return null;
         }
-        transform.position = new Vector3(y - 1, -x + 1);
+        transform.position = new Vector3(y - 1, 0, -x + 1);
     }
 
     public void EquipShield()
@@ -179,7 +185,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void EncounterTrap()
+    public void EncounterTrap(GameObject gameObject)
     {
         if (functioning)
         {
@@ -187,6 +193,7 @@ public class PlayerController : MonoBehaviour
             if (!isShield)
             {
                 Die();
+                Destroy(gameObject);
             }
         }
     }
