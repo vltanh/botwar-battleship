@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     public GameObject cloudPrefab;
     public GameObject shieldPrefab;
     public GameObject[] playerPrefabs;
+    public GameObject[] scoreZonePrefab;
 
     private int numPlayers = 2;
     private int numRows;
@@ -38,6 +39,7 @@ public class GameManager : MonoBehaviour
 
     private GameObject[,] boardTiles;
     private PlayerController[] players;
+    private GameObject[] scoreZone = new GameObject[2];
 
     public int currentMove = 0;
 
@@ -71,6 +73,13 @@ public class GameManager : MonoBehaviour
         Camera.main.transform.position = new Vector3((numCols - 1.0f) / 2.0f, 0.9f * numRows, -numRows);
         Camera.main.transform.rotation = Quaternion.Euler(60, 0, 0);
         //Instantiate(lightPrefab, new Vector3(), Quaternion.Euler(11.0f, 11.0f, 0.0f));
+        scoreZone[0] = Instantiate(scoreZonePrefab[0], new Vector3(-2, 0, -(numRows - 1.0f) / 2.0f), Quaternion.identity);
+        scoreZone[1] = Instantiate(scoreZonePrefab[1], new Vector3(numCols + 1, 0, -(numRows - 1.0f) / 2.0f), Quaternion.identity);
+
+        for (int i = 0; i < numPlayers; i++)
+        {
+            scoreZone[i].transform.GetChild(1).GetChild(0).GetComponent<TextMesh>().text = playerID[i];
+        }
     }
 
     private void SetupBoardView(string config_path)
@@ -219,6 +228,11 @@ public class GameManager : MonoBehaviour
             playerScoreText[i].text = $"{players[i].GetPoint()}";
         }
         stepCountText.text = $"{numMoves - currentMove}";
+
+        for (int i = 0; i < numPlayers; i++)
+        {
+            scoreZone[i].transform.GetChild(1).GetChild(1).GetComponent<TextMesh>().text = $"{players[i].GetPoint()}";
+        }
 
         if (Input.GetKeyDown(KeyCode.Space) && currentMove < numMoves)
         {

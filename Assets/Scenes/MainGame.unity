@@ -217,7 +217,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &291919637
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5323,7 +5323,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &814910643
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5760,7 +5760,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1166574563
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5955,6 +5955,9 @@ MonoBehaviour:
   playerPrefabs:
   - {fileID: 6985656288041185914, guid: 9c88f4e4ef3f8314d800ce9f5e231395, type: 3}
   - {fileID: 1963237206210152516, guid: b9f719cafa8a3e14ea6bb18d422588c7, type: 3}
+  scoreZonePrefab:
+  - {fileID: 5970470125748174246, guid: 1abcfd95e2bcdeb4ebb63c5d72cefbbb, type: 3}
+  - {fileID: 5098883203397874493, guid: 13622874116731948a1bfb183ab21460, type: 3}
   rootDir: C:\Users\Naru Bibi\Documents\GitHub\GameDev\TrashCollector\Assets\Match
   mapConfigFileName: 
   playerID:
@@ -6459,7 +6462,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2099298535
 RectTransform:
   m_ObjectHideFlags: 0
