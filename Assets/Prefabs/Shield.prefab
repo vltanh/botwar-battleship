@@ -203,15 +203,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5454073659167297598, guid: d3de10853c4f7474288a374eae58f673,
-        type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 5293414063501753692, guid: d3de10853c4f7474288a374eae58f673,
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5454073659167297598, guid: d3de10853c4f7474288a374eae58f673,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5462643304487765986, guid: d3de10853c4f7474288a374eae58f673,
         type: 3}

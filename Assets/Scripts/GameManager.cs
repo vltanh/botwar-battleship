@@ -218,7 +218,7 @@ public class GameManager : MonoBehaviour
             playerIDText[i].text = playerID[i];
             playerScoreText[i].text = $"{players[i].GetPoint()}";
         }
-        stepCountText.text = $"{currentMove}";
+        stepCountText.text = $"{numMoves - currentMove}";
 
         if (Input.GetKeyDown(KeyCode.Space) && currentMove < numMoves)
         {

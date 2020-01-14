@@ -111,10 +111,10 @@ MonoBehaviour:
     y: 30
     width: 1842
     height: 987
-  m_MinSize: {x: 881, y: 494}
+  m_MinSize: {x: 879, y: 494}
   m_MaxSize: {x: 24008, y: 14044}
   vertical: 0
-  controlID: 561
+  controlID: 7856
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -136,10 +136,10 @@ MonoBehaviour:
     y: 0
     width: 1473
     height: 987
-  m_MinSize: {x: 606, y: 494}
+  m_MinSize: {x: 604, y: 494}
   m_MaxSize: {x: 20006, y: 14044}
   vertical: 1
-  controlID: 562
+  controlID: 8082
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -161,10 +161,10 @@ MonoBehaviour:
     y: 0
     width: 1473
     height: 628
-  m_MinSize: {x: 606, y: 222}
-  m_MaxSize: {x: 12006, y: 4022}
+  m_MinSize: {x: 604, y: 222}
+  m_MaxSize: {x: 12004, y: 4022}
   vertical: 0
-  controlID: 563
+  controlID: 8083
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -215,7 +215,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 222}
   m_MaxSize: {x: 8004, y: 4022}
   vertical: 0
-  controlID: 564
+  controlID: 8084
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -292,7 +292,7 @@ MonoBehaviour:
   m_MinSize: {x: 466, y: 272}
   m_MaxSize: {x: 20006, y: 10022}
   vertical: 0
-  controlID: 662
+  controlID: 7983
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -370,7 +370,7 @@ MonoBehaviour:
   m_MinSize: {x: 275, y: 172}
   m_MaxSize: {x: 4002, y: 8022}
   vertical: 1
-  controlID: 718
+  controlID: 7857
 --- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -536,7 +536,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 8efbffff
+      m_ExpandedIDs: d6f7ffff1ef8ffff8ef9ffffa2f9ffff7efbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -629,11 +629,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.16857453, y: -0.38786095, z: 0.0723822, w: 0.9032816}
     speed: 2
-    m_Value: {x: -0.16857453, y: 0.38786095, z: -0.0723822, w: -0.9032817}
+    m_Value: {x: 0.16857366, y: -0.38785896, z: 0.072381824, w: 0.903277}
   m_Size:
     m_Target: 0.68256485
     speed: 2
-    m_Value: 0.68256485
+    m_Value: 2.4788542
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -707,9 +707,9 @@ MonoBehaviour:
     m_IsLocked: 1
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 9c3b0000
-    m_LastClickedID: 15260
-    m_ExpandedIDs: 000000001e3a0000243f00009c420000704500000c5c00003a5d00003c71000000ca9a3b
+    m_SelectedIDs: ae3b0000
+    m_LastClickedID: 15278
+    m_ExpandedIDs: 00000000303a0000363f0000ae420000824500001e5c00004e71000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -737,7 +737,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000001e3a0000243f00009c420000704500000c5c00003a5d00003c71000000ca9a3b
+    m_ExpandedIDs: 00000000303a0000363f0000ae420000824500001e5c00004e71000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -856,20 +856,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/support
+    - Assets/support/Polygon Arsenal/Prefabs/Combat/Aura/ChargeAura
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/support
+  - Assets/support/Polygon Arsenal/Prefabs/Combat/Aura/ChargeAura
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Naru Bibi\Documents\GitHub\GameDev\TrashCollector
   m_LockTracker:
     m_IsLocked: 1
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 240}
-    m_SelectedIDs: 3a5d0000
-    m_LastClickedID: 23866
-    m_ExpandedIDs: 000000001e3a0000243f00009c420000704500000c5c00003a5d00003c71000000ca9a3b
+    scrollPos: {x: 0, y: 139}
+    m_SelectedIDs: 1a710000
+    m_LastClickedID: 28954
+    m_ExpandedIDs: 00000000303a0000363f0000ae4200000a430000824500001e5c00004c5d00004e71000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -897,7 +897,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000001e3a0000243f00009c420000704500000c5c00003a5d00003c71000000ca9a3b
+    m_ExpandedIDs: 00000000303a0000363f0000ae420000824500001e5c00004e71000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1046,4 +1046,4 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 253406
+  m_LastSelectedObjectID: -195688
