@@ -53,8 +53,9 @@ class Player:
                 self.die()
 
     def die(self):
-        logger.append(f'[{self.id}] dies.')
-        self.alive = False
+        if self.alive:
+            logger.append(f'[{self.id}] dies.')
+            self.alive = False
         
 root = sys.argv[1]
 player_sub = 'Players'
