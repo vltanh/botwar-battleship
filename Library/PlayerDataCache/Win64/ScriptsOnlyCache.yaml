@@ -2,6 +2,7 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - GameManager
+    - LookAtCamera
     - LowPolyWater
     - MirzaBeig.ParticleSystems.AnimatedLight
     - MirzaBeig.ParticleSystems.ParticleSystems
@@ -95,61 +96,63 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9398}
     - Class: 114
-      Script: {instanceID: 9418}
+      Script: {instanceID: 9412}
     - Class: 114
-      Script: {instanceID: 9422}
+      Script: {instanceID: 9420}
     - Class: 114
-      Script: {instanceID: 9450}
+      Script: {instanceID: 9424}
     - Class: 114
-      Script: {instanceID: 9468}
+      Script: {instanceID: 9452}
     - Class: 114
-      Script: {instanceID: 9518}
+      Script: {instanceID: 9470}
     - Class: 114
-      Script: {instanceID: 9558}
+      Script: {instanceID: 9520}
     - Class: 114
       Script: {instanceID: 9560}
     - Class: 114
-      Script: {instanceID: 9566}
+      Script: {instanceID: 9562}
     - Class: 114
-      Script: {instanceID: 9572}
+      Script: {instanceID: 9568}
     - Class: 114
-      Script: {instanceID: 9580}
+      Script: {instanceID: 9574}
     - Class: 114
-      Script: {instanceID: 9616}
+      Script: {instanceID: 9582}
     - Class: 114
       Script: {instanceID: 9618}
     - Class: 114
-      Script: {instanceID: 9776}
+      Script: {instanceID: 9620}
     - Class: 114
-      Script: {instanceID: 9800}
+      Script: {instanceID: 9778}
     - Class: 114
-      Script: {instanceID: 9818}
+      Script: {instanceID: 9802}
     - Class: 114
-      Script: {instanceID: 9908}
+      Script: {instanceID: 9820}
     - Class: 114
-      Script: {instanceID: 9914}
+      Script: {instanceID: 9910}
     - Class: 114
-      Script: {instanceID: 10016}
+      Script: {instanceID: 9916}
     - Class: 114
-      Script: {instanceID: 10048}
+      Script: {instanceID: 10018}
     - Class: 114
-      Script: {instanceID: 10052}
+      Script: {instanceID: 10050}
     - Class: 114
-      Script: {instanceID: 10086}
+      Script: {instanceID: 10054}
     - Class: 114
-      Script: {instanceID: 10200}
+      Script: {instanceID: 10088}
     - Class: 114
-      Script: {instanceID: 10232}
+      Script: {instanceID: 10202}
     - Class: 114
-      Script: {instanceID: 10314}
+      Script: {instanceID: 10234}
     - Class: 114
-      Script: {instanceID: 10328}
+      Script: {instanceID: 10316}
     - Class: 114
-      Script: {instanceID: 10378}
+      Script: {instanceID: 10330}
     - Class: 114
-      Script: {instanceID: 10880}
+      Script: {instanceID: 10380}
     - Class: 114
-      Script: {instanceID: 10910}
+      Script: {instanceID: 10882}
+    - Class: 114
+      Script: {instanceID: 10912}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -196,31 +199,31 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9558}
-    - Class: 114
       Script: {instanceID: 9560}
     - Class: 114
-      Script: {instanceID: 9564}
+      Script: {instanceID: 9562}
     - Class: 114
       Script: {instanceID: 9566}
     - Class: 114
-      Script: {instanceID: 9572}
+      Script: {instanceID: 9568}
     - Class: 114
-      Script: {instanceID: 9580}
+      Script: {instanceID: 9574}
     - Class: 114
-      Script: {instanceID: 9588}
+      Script: {instanceID: 9582}
     - Class: 114
-      Script: {instanceID: 9606}
+      Script: {instanceID: 9590}
     - Class: 114
       Script: {instanceID: 9608}
     - Class: 114
-      Script: {instanceID: 9616}
+      Script: {instanceID: 9610}
     - Class: 114
       Script: {instanceID: 9618}
     - Class: 114
       Script: {instanceID: 9620}
     - Class: 114
-      Script: {instanceID: 10554}
+      Script: {instanceID: 9622}
+    - Class: 114
+      Script: {instanceID: 10556}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -248,6 +251,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Rotator
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LookAtCamera
   - hash:
       serializedVersion: 2
       Hash: abda4ea65792ffcf5d8dd50984aae797
@@ -760,7 +769,7 @@ ScriptsOnlyBuild:
     className: ScreenSpaceReflections
   - hash:
       serializedVersion: 2
-      Hash: e3e65284d674ad31b25d6e51e3584d6e
+      Hash: 90ec6d4090cd18426f30b790fe7dd60b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager

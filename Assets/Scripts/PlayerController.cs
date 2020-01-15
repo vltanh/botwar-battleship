@@ -195,12 +195,19 @@ public class PlayerController : MonoBehaviour
                 Die();
                 Destroy(gameObject);
             }
+            else
+            {
+                gameObject.GetComponent<Renderer>().enabled = false;
+            }
         }
     }
 
     public void EarnPoint(int v)
     {
         Debug.Log($"[{id}] Gain {v} coins, totaling {score+v}!");
-        score += v;
+        if (functioning)
+        {
+            score += v;
+        }
     }
 }

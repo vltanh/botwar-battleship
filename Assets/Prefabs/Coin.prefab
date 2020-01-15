@@ -274,6 +274,11 @@ PrefabInstance:
       propertyPath: InitialModule.startSize.scalar
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 198482767506842470, guid: 0cead53e87f84244f89103723e50ed7d,
+        type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 198709972649318644, guid: 0cead53e87f84244f89103723e50ed7d,
         type: 3}
       propertyPath: InitialModule.startSize.scalar
@@ -369,6 +374,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.5000005
       objectReference: {fileID: 0}
+    - target: {fileID: 5360176202025243566, guid: 31eacfe55e07fd44ca5a4b5893f1e16b,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 200be9953d192cd48a8b41a5db3fd1bf, type: 3}
     - target: {fileID: 5339746583968602322, guid: 31eacfe55e07fd44ca5a4b5893f1e16b,
         type: 3}
       propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.size
@@ -484,11 +494,11 @@ PrefabInstance:
       propertyPath: ShapeModule.radiusThickness
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5360176202025243566, guid: 31eacfe55e07fd44ca5a4b5893f1e16b,
+    - target: {fileID: 5339746583968602322, guid: 31eacfe55e07fd44ca5a4b5893f1e16b,
         type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 4300000, guid: 200be9953d192cd48a8b41a5db3fd1bf, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31eacfe55e07fd44ca5a4b5893f1e16b, type: 3}
 --- !u!1 &1719778056164929713 stripped

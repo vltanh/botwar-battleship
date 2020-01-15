@@ -403,6 +403,21 @@ public class GameManager : MonoBehaviour
             //{
             //    process.Kill();
             //}
+            StartCoroutine(KillProcess(process));
+            
+        }
+    }
+
+    private IEnumerator KillProcess(Process p)
+    {
+        yield return new WaitForSeconds(2.0f);
+        try
+        {
+            if (!p.HasExited) p.Kill();
+        }
+        catch (Exception e)
+        {
+            Debug.LogError(e);
         }
     }
 

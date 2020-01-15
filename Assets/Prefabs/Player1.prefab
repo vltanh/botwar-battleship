@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2727584596766731618}
   - component: {fileID: 5985907969079588914}
   m_Layer: 0
-  m_Name: Player_BlackPearl
+  m_Name: Player1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106,6 +106,11 @@ PrefabInstance:
     - target: {fileID: 4632143612809574, guid: 27bfc8d28fb0d8f428cc00cd7bc30930, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198961882861840162, guid: 27bfc8d28fb0d8f428cc00cd7bc30930,
+        type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 198427531002129074, guid: 27bfc8d28fb0d8f428cc00cd7bc30930,
         type: 3}

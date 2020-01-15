@@ -179,9 +179,11 @@
     <None Include="Assets\support\PolygonPrototype\Shaders\Prototype_Global.shader" />
     <None Include="Assets\support\Mirza Beig\Shaders\Particles\Cutout\AlphaCutoff-Alpha.shader" />
     <None Include="Assets\support\Mirza Beig\README - Advanced Particle Scaler.txt" />
+    <None Include="Assets\Match\Maps\map37.txt" />
     <None Include="Assets\support\Polygon Arsenal\Shaders\Standard\PolyLitSurface.shader" />
     <None Include="Assets\support\FlatKit\Shaders\StylizedSurface\DustyroomStylizedLighting.cginc" />
     <None Include="Assets\support\Mirza Beig\Shaders\Particles\Distortion\Distortion-Alpha.shader" />
+    <None Include="Assets\Match\Maps\maze.txt" />
     <None Include="Assets\support\Mirza Beig\Shaders\Particles\Distortion\Distortion-Add (ORIGINAL).shader" />
     <None Include="Assets\support\FlatKit\Shaders\ImageEffects\Resources\FogPlus.shader" />
     <None Include="Assets\support\PolygonPrototype\Shaders\Prototype_Glass_Global.shader" />

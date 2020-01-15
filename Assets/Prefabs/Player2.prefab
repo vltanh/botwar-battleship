@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1963237206210152538}
   - component: {fileID: 942921069949797127}
   m_Layer: 0
-  m_Name: Player_Speedy
+  m_Name: Player2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -289,6 +289,11 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.startSize.scalar
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198879472521764208, guid: f3b99dfebc969354bb853e9b0b5105d1,
+        type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 198857659042813560, guid: f3b99dfebc969354bb853e9b0b5105d1,
         type: 3}
