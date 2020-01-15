@@ -1,0 +1,82 @@
+2 3 9 12
+3 3 9 13
+2 3 10 13
+1 3 9 13
+1 2 8 13
+1 1 7 13
+2 1 8 13
+3 1 8 12
+4 1 8 11
+5 1 9 11
+6 1 10 11
+7 1 11 11
+8 1 11 12
+8 2 11 11
+8 3 10 11
+9 3 9 11
+10 3 8 11
+11 3 9 11
+11 2 8 11
+11 1 9 11
+[TeamMinh] Starting point (2, 3).
+[TeamThuc] Starting point (9, 12).
+[TeamMinh] Move from (2, 3) to (3, 3)
+[TeamThuc] Move from (9, 12) to (9, 13)
+[TeamMinh] Equip shield.
+[TeamThuc] Get 4 coins.
+[TeamMinh] Move from (3, 3) to (2, 3)
+[TeamThuc] Move from (9, 13) to (10, 13)
+[TeamThuc] Get 6 coins.
+[TeamMinh] Move from (2, 3) to (1, 3)
+[TeamThuc] Move from (10, 13) to (9, 13)
+[TeamMinh] Encounter trap.
+[TeamMinh] Move from (1, 3) to (1, 2)
+[TeamThuc] Move from (9, 13) to (8, 13)
+[TeamMinh] Get 4 coins.
+[TeamThuc] Get 1 coins.
+[TeamMinh] Move from (1, 2) to (1, 1)
+[TeamThuc] Move from (8, 13) to (7, 13)
+[TeamMinh] Get 1 coins.
+[TeamThuc] Get 2 coins.
+[TeamMinh] Move from (1, 1) to (2, 1)
+[TeamThuc] Move from (7, 13) to (8, 13)
+[TeamMinh] Get 6 coins.
+[TeamMinh] Move from (2, 1) to (3, 1)
+[TeamThuc] Move from (8, 13) to (8, 12)
+[TeamMinh] Encounter trap.
+[TeamMinh] Move from (3, 1) to (4, 1)
+[TeamThuc] Move from (8, 12) to (8, 11)
+[TeamThuc] Get 1 coins.
+[TeamMinh] Move from (4, 1) to (5, 1)
+[TeamThuc] Move from (8, 11) to (9, 11)
+[TeamThuc] Get 1 coins.
+[TeamMinh] Move from (5, 1) to (6, 1)
+[TeamThuc] Move from (9, 11) to (10, 11)
+[TeamMinh] Move from (6, 1) to (7, 1)
+[TeamThuc] Move from (10, 11) to (11, 11)
+[TeamThuc] Get 1 coins.
+[TeamMinh] Move from (7, 1) to (8, 1)
+[TeamThuc] Move from (11, 11) to (11, 12)
+[TeamThuc] Get 1 coins.
+[TeamMinh] Move from (8, 1) to (8, 2)
+[TeamThuc] Move from (11, 12) to (11, 11)
+[TeamMinh] Encounter trap.
+[TeamMinh] Move from (8, 2) to (8, 3)
+[TeamThuc] Move from (11, 11) to (10, 11)
+[TeamMinh] Get 1 coins.
+[TeamMinh] Move from (8, 3) to (9, 3)
+[TeamThuc] Move from (10, 11) to (9, 11)
+[TeamMinh] Encounter trap.
+[TeamMinh] Move from (9, 3) to (10, 3)
+[TeamThuc] Move from (9, 11) to (8, 11)
+[TeamMinh] Move from (10, 3) to (11, 3)
+[TeamThuc] Move from (8, 11) to (9, 11)
+[TeamMinh] Move from (11, 3) to (11, 2)
+[TeamThuc] Move from (9, 11) to (8, 11)
+[TeamMinh] Encounter trap.
+[TeamMinh] Move from (11, 2) to (11, 1)
+[TeamThuc] Move from (8, 11) to (9, 11)
+[TeamMinh] Get 8 coins.
+Final score:
+[TeamMinh] is alive and shielded with 20 coins.
+[TeamThuc] is alive with 17 coins.

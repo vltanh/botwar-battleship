@@ -4,7 +4,18 @@ import random
 import subprocess
 from subprocess import STDOUT, check_output
 
+root = sys.argv[1]
+player_sub = 'Players'
+match_sub = 'Match'
+map_sub = 'Maps'
+map_id = sys.argv[2]
+players_id = sys.argv[3:5]
+
 logger = []
+
+f = open(f'{root}/{map_sub}/{map_id}.txt')
+num_rows, num_cols, num_moves = map(int, f.readline().strip().split())
+board = [x.strip().split(' ') for x in f.readlines()]
 
 class Vector2:
     def __init__(self, x, y):
@@ -56,19 +67,7 @@ class Player:
         if self.alive:
             logger.append(f'[{self.id}] dies.')
             self.alive = False
-        
-root = sys.argv[1]
-player_sub = 'Players'
-match_sub = 'Match'
-map_sub = 'Maps'
 
-map_id = sys.argv[2]
-
-f = open(f'{root}/{map_sub}/{map_id}.txt')
-num_rows, num_cols, num_moves = map(int, f.readline().strip().split())
-board = [x.strip().split(' ') for x in f.readlines()]
-
-players_id = sys.argv[3:5]
 players = [ Player(players_id[i]) for i in range(2) ]
 outputs_stream = open(f'{root}/{match_sub}/{players_id[0]}_{players_id[1]}_{map_id}.txt', 'w')
 
@@ -90,8 +89,6 @@ def subprocess_args(include_stdout=True):
                 'startupinfo': si,
                 'env': env })
     return ret
-
-import subprocess, threading
 
 def get_next_move(t):
     moves = [ Vector2(0, 0) for _ in range(2) ]
@@ -126,51 +123,56 @@ def get_random_vec(v):
         y = random.randint(1, num_cols)
     return x, y
 
-moves = get_next_move(0)
+def main():
+    try:
+        moves = get_next_move(0)
 
-for i in range(2):
-    if not check_valid(moves[i]):
-        logger.append(f'[{players_id[i]}] Invalid starting point {moves[i]}.')
-        moves[i] = Vector2(*get_random_vec(moves[1-i]))
+        for i in range(2):
+            if not check_valid(moves[i]):
+                logger.append(f'[{players_id[i]}] Invalid starting point {moves[i]}.')
+                moves[i] = Vector2(*get_random_vec(moves[1-i]))
 
-while moves[0] == moves[1]:
-    logger.append(f'[{players_id[0]}][{players_id[1]}] Coincided starting point {moves[0]}.')
-    moves[0] = Vector2(*get_random_vec(Vector2(0, 0)))
-    moves[1] = Vector2(*get_random_vec(moves[0]))
+        while moves[0] == moves[1]:
+            logger.append(f'[{players_id[0]}][{players_id[1]}] Coincided starting point {moves[0]}.')
+            moves[0] = Vector2(*get_random_vec(Vector2(0, 0)))
+            moves[1] = Vector2(*get_random_vec(moves[0]))
 
-for i in range(2):
-    logger.append(f'[{players_id[i]}] Starting point {moves[i]}.')
-    players[i].set_pos(moves[i].x, moves[i].y)
-outputs_stream.write(f'{players[0].x} {players[0].y} {players[1].x} {players[1].y}\n')
+        for i in range(2):
+            logger.append(f'[{players_id[i]}] Starting point {moves[i]}.')
+            players[i].set_pos(moves[i].x, moves[i].y)
+        outputs_stream.write(f'{players[0].x} {players[0].y} {players[1].x} {players[1].y}\n')
 
-for move_count in range(1, num_moves):
-    moves = get_next_move(move_count)
+        for move_count in range(1, num_moves):
+            moves = get_next_move(move_count)
 
-    prev_pos = [ Vector2(p.x, p.y) for p in players ]
-    for i in range(2):
-        players[i].go(moves[i].x, moves[i].y)
-    outputs_stream.write(f'{players[0].x} {players[0].y} {players[1].x} {players[1].y}\n')
+            prev_pos = [ Vector2(p.x, p.y) for p in players ]
+            for i in range(2):
+                players[i].go(moves[i].x, moves[i].y)
+            outputs_stream.write(f'{players[0].x} {players[0].y} {players[1].x} {players[1].y}\n')
     
-    if Vector2(players[0].x, players[0].y) == Vector2(players[1].x, players[1].y) \
-        or (Vector2(players[0].x, players[0].y) == prev_pos[1] \
-            and Vector2(players[1].x, players[1].y) == prev_pos[0]):
-        players[0].die()
-        players[1].die()
+            if Vector2(players[0].x, players[0].y) == Vector2(players[1].x, players[1].y) \
+                or (Vector2(players[0].x, players[0].y) == prev_pos[1] \
+                    and Vector2(players[1].x, players[1].y) == prev_pos[0]):
+                players[0].die()
+                players[1].die()
 
-    for i in range(2):
-        if board[players[i].x - 1][players[i].y - 1] == 'W':
-            players[i].encounter_trap()
-            board[players[i].x - 1][players[i].y - 1] = '0'
-        elif board[players[i].x - 1][players[i].y - 1] == 'M':
-            players[i].equip_shield()
-            board[players[i].x - 1][players[i].y - 1] = '0'
-        elif board[players[i].x - 1][players[i].y - 1] != '0':
-            players[i].earn_point(int(board[players[i].x - 1][players[i].y - 1]))
-            board[players[i].x - 1][players[i].y - 1] = '0'
+            for i in range(2):
+                if board[players[i].x - 1][players[i].y - 1] == 'W':
+                    players[i].encounter_trap()
+                    board[players[i].x - 1][players[i].y - 1] = '0'
+                elif board[players[i].x - 1][players[i].y - 1] == 'M':
+                    players[i].equip_shield()
+                    board[players[i].x - 1][players[i].y - 1] = '0'
+                elif board[players[i].x - 1][players[i].y - 1] != '0':
+                    players[i].earn_point(int(board[players[i].x - 1][players[i].y - 1]))
+                    board[players[i].x - 1][players[i].y - 1] = '0'
 
-logger.append('Final score:')
-for i in range(2):
-    logger.append(f'[{players_id[i]}] is {"alive" if players[i].alive else "dead"}{" and shielded" if players[i].shield else ""} with {players[i].point} coins.')
+        logger.append('Final score:')
+        for i in range(2):
+            logger.append(f'[{players_id[i]}] is {"alive" if players[i].alive else "dead"}{" and shielded" if players[i].shield else ""} with {players[i].point} coins.')
+    finally:
+        outputs_stream.writelines('\n'.join(logger))
+        outputs_stream.close()
 
-outputs_stream.writelines('\n'.join(logger))
-outputs_stream.close()
+if __name__ == '__main__':
+    main()

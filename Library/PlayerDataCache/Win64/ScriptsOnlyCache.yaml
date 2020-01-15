@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - CameraController
     - GameManager
     - LookAtCamera
     - LowPolyWater
@@ -153,6 +154,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 10882}
     - Class: 114
       Script: {instanceID: 10912}
+    - Class: 114
+      Script: {instanceID: 45654}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1379,6 +1382,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: b4721f5a5d55c1c4f1c76712daacc7a1
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CameraController
   platform: 19
   scenePathNames:
   - Assets/Scenes/Menu.unity

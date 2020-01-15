@@ -1,0 +1,79 @@
+7 7 8 9
+7 7 8 9
+7 7 8 9
+7 7 8 9
+7 7 8 9
+7 7 8 9
+7 7 8 9
+7 7 8 9
+7 7 8 9
+7 7 8 9
+7 7 8 9
+7 7 8 9
+7 7 8 9
+7 7 8 9
+7 7 8 9
+7 7 8 9
+7 7 8 9
+7 7 8 9
+7 7 8 9
+7 7 8 9
+7 7 8 9
+7 7 8 9
+7 7 8 9
+7 7 8 9
+6 7 7 9
+[TeamLong][TeamLong] Coincided starting point (14, 15).
+[TeamLong] Starting point (7, 7).
+[TeamLong] Starting point (8, 9).
+__init__() missing 2 required positional arguments: 'x' and 'y'
+__init__() missing 2 required positional arguments: 'x' and 'y'
+__init__() missing 2 required positional arguments: 'x' and 'y'
+__init__() missing 2 required positional arguments: 'x' and 'y'
+__init__() missing 2 required positional arguments: 'x' and 'y'
+__init__() missing 2 required positional arguments: 'x' and 'y'
+__init__() missing 2 required positional arguments: 'x' and 'y'
+__init__() missing 2 required positional arguments: 'x' and 'y'
+__init__() missing 2 required positional arguments: 'x' and 'y'
+__init__() missing 2 required positional arguments: 'x' and 'y'
+__init__() missing 2 required positional arguments: 'x' and 'y'
+__init__() missing 2 required positional arguments: 'x' and 'y'
+__init__() missing 2 required positional arguments: 'x' and 'y'
+__init__() missing 2 required positional arguments: 'x' and 'y'
+__init__() missing 2 required positional arguments: 'x' and 'y'
+__init__() missing 2 required positional arguments: 'x' and 'y'
+__init__() missing 2 required positional arguments: 'x' and 'y'
+__init__() missing 2 required positional arguments: 'x' and 'y'
+__init__() missing 2 required positional arguments: 'x' and 'y'
+__init__() missing 2 required positional arguments: 'x' and 'y'
+__init__() missing 2 required positional arguments: 'x' and 'y'
+__init__() missing 2 required positional arguments: 'x' and 'y'
+__init__() missing 2 required positional arguments: 'x' and 'y'
+__init__() missing 2 required positional arguments: 'x' and 'y'
+__init__() missing 2 required positional arguments: 'x' and 'y'
+__init__() missing 2 required positional arguments: 'x' and 'y'
+__init__() missing 2 required positional arguments: 'x' and 'y'
+__init__() missing 2 required positional arguments: 'x' and 'y'
+__init__() missing 2 required positional arguments: 'x' and 'y'
+__init__() missing 2 required positional arguments: 'x' and 'y'
+__init__() missing 2 required positional arguments: 'x' and 'y'
+__init__() missing 2 required positional arguments: 'x' and 'y'
+__init__() missing 2 required positional arguments: 'x' and 'y'
+__init__() missing 2 required positional arguments: 'x' and 'y'
+__init__() missing 2 required positional arguments: 'x' and 'y'
+__init__() missing 2 required positional arguments: 'x' and 'y'
+__init__() missing 2 required positional arguments: 'x' and 'y'
+__init__() missing 2 required positional arguments: 'x' and 'y'
+__init__() missing 2 required positional arguments: 'x' and 'y'
+__init__() missing 2 required positional arguments: 'x' and 'y'
+__init__() missing 2 required positional arguments: 'x' and 'y'
+__init__() missing 2 required positional arguments: 'x' and 'y'
+__init__() missing 2 required positional arguments: 'x' and 'y'
+__init__() missing 2 required positional arguments: 'x' and 'y'
+__init__() missing 2 required positional arguments: 'x' and 'y'
+__init__() missing 2 required positional arguments: 'x' and 'y'
+[TeamLong] Move from (7, 7) to (6, 7)
+[TeamLong] Move from (8, 9) to (7, 9)
+Final score:
+[TeamLong] is alive with 0 coins.
+[TeamLong] is alive with 0 coins.
