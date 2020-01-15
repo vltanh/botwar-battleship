@@ -148,6 +148,8 @@
     <None Include="Assets\support\Mirza Beig\Shaders\Particles\No Fog\NoFog-Add.shader" />
     <None Include="Assets\Tournament\Match\TeamThuc_TeamMinh_map37.txt" />
     <None Include="Assets\support\Mirza Beig\Scripting\Effects\Particle Affectors\GPU (EXPERIMENTAL)\Compute Shaders\Resources\TurbulenceParticleAffectorGPU.compute" />
+    <None Include="Assets\Tournament\Match\TeamHy_TeamThuc_hygen.txt" />
+    <None Include="Assets\Tournament\Match\Team1_Team1_hygen.txt" />
     <None Include="Assets\Tournament\Match\TeamLong_TeamLong_maze.txt" />
     <None Include="Assets\support\Mirza Beig\Scripting\Effects\Particle Affectors\GPU (EXPERIMENTAL)\Compute Shaders\Resources\ParticleAffectorGPU-Common.cginc" />
     <None Include="Assets\TrashCollector\Tournament\Maps\maze.txt" />
@@ -158,6 +160,7 @@
     <None Include="Assets\support\FlatKit\Shaders\StylizedSurface\Terrain.shader" />
     <None Include="Assets\support\FlatKit\Shaders\StylizedSurface\DustyroomTerrainSplatmapCommon.cginc" />
     <None Include="Assets\support\FlatKit\Shaders\StylizedSurface\StylizedSurfaceOutline.shader" />
+    <None Include="Assets\TrashCollector\Tournament\Maps\hygen.txt" />
     <None Include="Assets\support\Mirza Beig\Shaders\Particles\Distortion\Distortion-Add.shader" />
     <None Include="Assets\Tournament\Match\TeamThuc_TeamMinh_map.txt" />
     <None Include="Assets\support\FlatKit\Shaders\ImageEffects\Resources\OutlinePlus.shader" />
@@ -180,6 +183,7 @@
     <None Include="Assets\Lowpoly paper boats\doc\readme.txt" />
     <None Include="Assets\support\Mirza Beig\README - Ultimate VFX.txt" />
     <None Include="Assets\TrashCollector\Tournament\Match\TeamLong_TeamHy_maze.txt" />
+    <None Include="Assets\Tournament\Match\TeamThuc_TeamLong_hygen.txt" />
     <None Include="Assets\Tournament\Match\TeamThuc_TeamBao_map.txt" />
     <None Include="Assets\support\StylizedExplosionPack\shader\alphaBlend_glow.shader" />
     <None Include="Assets\support\Mirza Beig\Scripting\Effects\Particle Affectors\GPU (EXPERIMENTAL)\Compute Shaders\Resources\AttractionParticleAffectorGPU.compute" />
@@ -187,6 +191,7 @@
     <None Include="Assets\Tournament\Match\TeamBao_TeamThuc_map_.txt" />
     <None Include="Assets\support\PolygonPrototype\Shaders\Prototype_Object.shader" />
     <None Include="Assets\Tournament\Match\TeamBao_TeamMinh_map_.txt" />
+    <None Include="Assets\Tournament\Match\TeamThuc_TeamHy_hygen.txt" />
     <None Include="Assets\Tournament\Match\TeamThuc_TeamThuc_maze.txt" />
     <None Include="Assets\support\StylizedExplosionPack\Tips &amp; Documentations.txt" />
     <None Include="Assets\Tournament\Maps\map_.txt" />
@@ -209,6 +214,8 @@
     <None Include="Assets\TrashCollector\Tournament\Maps\map_.txt" />
     <None Include="Assets\support\FlatKit\Shaders\StylizedSurface\DustyroomStylizedLighting.cginc" />
     <None Include="Assets\Tournament\Match\TeamHy_TeamMinh_map.txt" />
+    <None Include="Assets\Tournament\Match\TeamHy_TeamVoDich_hygen.txt" />
+    <None Include="Assets\Tournament\Match\TeamThuc_TeamVoDich_hygen.txt" />
     <None Include="Assets\support\Mirza Beig\Shaders\Particles\Distortion\Distortion-Alpha.shader" />
     <None Include="Assets\Tournament\Maps\maze.txt" />
     <None Include="Assets\support\Mirza Beig\Shaders\Particles\Distortion\Distortion-Add (ORIGINAL).shader" />
@@ -229,6 +236,7 @@
     <None Include="Assets\Tournament\Match\TeamThuc_TeamHy_maze.txt" />
     <None Include="Assets\TrashCollector\Tournament\Match\TeamLong_TeamLong_maze.txt" />
     <None Include="Assets\Tournament\Match\TeamMinh_TeamThuc_map.txt" />
+    <None Include="Assets\Tournament\Maps\hygen.txt" />
     <None Include="Assets\support\Polygon Arsenal\Polygon Arsenal - Readme.txt" />
     <None Include="Assets\support\Polygon Arsenal\Shaders\Standard\PolyRimLightTransparent.shader" />
     <None Include="Assets\Tournament\Match\TeamMinh_TeamBao_map_.txt" />

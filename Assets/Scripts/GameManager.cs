@@ -149,10 +149,10 @@ public class GameManager : MonoBehaviour
         Debug.Log($"{numRows} x {numCols}, {numMoves} move(s)");
 
         boardData = new string[numRows, numCols];
-        for (int i = 1; i < lines.Length; i++)
+        for (int i = 1; i <= numRows; i++)
         {
             line = lines[i].Split(' ');
-            for (int j = 0; j < line.Length; j++)
+            for (int j = 0; j < numCols; j++)
             {
                 boardData[i - 1, j] = Regex.Replace(line[j], @"\t|\n|\r", "");
             }

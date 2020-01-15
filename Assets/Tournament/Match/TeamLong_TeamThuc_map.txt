@@ -7,17 +7,17 @@
 9 7 6 8
 8 7 6 7
 9 7 6 6
-8 7 6 5
+10 7 6 5
 9 7 5 5
-8 7 4 5
-9 7 3 5
+10 7 4 5
+11 7 3 5
 10 7 3 4
-9 7 4 4
-10 7 5 4
-11 7 5 3
-12 7 5 2
-11 7 5 1
-12 7 4 1
+11 7 4 4
+12 7 5 4
+12 8 5 3
+12 9 5 2
+11 9 5 1
+12 9 4 1
 [TeamLong] Starting point (12, 8).
 [TeamThuc] Starting point (8, 6).
 [TeamLong] Move from (12, 8) to (12, 7)
@@ -43,32 +43,33 @@
 [TeamLong] Get 1 coins.
 [TeamLong] Move from (8, 7) to (9, 7)
 [TeamThuc] Move from (6, 7) to (6, 6)
-[TeamLong] Move from (9, 7) to (8, 7)
+[TeamLong] Move from (9, 7) to (10, 7)
 [TeamThuc] Move from (6, 6) to (6, 5)
 [TeamThuc] Get 2 coins.
-[TeamLong] Move from (8, 7) to (9, 7)
+[TeamLong] Move from (10, 7) to (9, 7)
 [TeamThuc] Move from (6, 5) to (5, 5)
-[TeamLong] Move from (9, 7) to (8, 7)
-[TeamThuc] Move from (5, 5) to (4, 5)
-[TeamLong] Move from (8, 7) to (9, 7)
-[TeamThuc] Move from (4, 5) to (3, 5)
 [TeamLong] Move from (9, 7) to (10, 7)
+[TeamThuc] Move from (5, 5) to (4, 5)
+[TeamLong] Move from (10, 7) to (11, 7)
+[TeamThuc] Move from (4, 5) to (3, 5)
+[TeamLong] Move from (11, 7) to (10, 7)
 [TeamThuc] Move from (3, 5) to (3, 4)
 [TeamThuc] Get 3 coins.
-[TeamLong] Move from (10, 7) to (9, 7)
-[TeamThuc] Move from (3, 4) to (4, 4)
-[TeamLong] Move from (9, 7) to (10, 7)
-[TeamThuc] Move from (4, 4) to (5, 4)
 [TeamLong] Move from (10, 7) to (11, 7)
+[TeamThuc] Move from (3, 4) to (4, 4)
+[TeamLong] Move from (11, 7) to (12, 7)
+[TeamThuc] Move from (4, 4) to (5, 4)
+[TeamLong] Move from (12, 7) to (12, 8)
 [TeamThuc] Move from (5, 4) to (5, 3)
 [TeamThuc] Get 1 coins.
-[TeamLong] Move from (11, 7) to (12, 7)
+[TeamLong] Move from (12, 8) to (12, 9)
 [TeamThuc] Move from (5, 3) to (5, 2)
-[TeamLong] Move from (12, 7) to (11, 7)
+[TeamLong] Move from (12, 9) to (11, 9)
 [TeamThuc] Move from (5, 2) to (5, 1)
+[TeamLong] Get 1 coins.
 [TeamThuc] Get 1 coins.
-[TeamLong] Move from (11, 7) to (12, 7)
+[TeamLong] Move from (11, 9) to (12, 9)
 [TeamThuc] Move from (5, 1) to (4, 1)
 Final score:
-[TeamLong] is alive and shielded with 2 coins.
+[TeamLong] is alive and shielded with 3 coins.
 [TeamThuc] is alive with 15 coins.
