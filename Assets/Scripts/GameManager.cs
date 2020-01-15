@@ -12,7 +12,7 @@ using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
 {
-    private const float PROCESS_WAITTIME = 2.0f;
+    private const float PROCESS_WAITTIME = 0.0f;
 
     public Text[] playerIDText;
     public Text[] playerScoreText;
@@ -45,6 +45,8 @@ public class GameManager : MonoBehaviour
 
     Vector2Int[] previousPositions, nextPositions;
 
+    List<Vector2Int[]> moveLists;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -65,6 +67,29 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < numPlayers; i++)
         {
             previousPositions[i] = nextPositions[i] = Vector2Int.zero;
+        }
+
+        var sr = new StreamReader($"{rootDir}/Match/{playerID[0]}_{playerID[1]}_{mapConfigFileName}.txt");
+        var fileContents = sr.ReadToEnd();
+        sr.Close();
+
+        moveLists = new List<Vector2Int[]>();
+        var lines = fileContents.Split('\n');
+        for (int i = 0; i < numMoves; i++)
+        {
+            string[] line = lines[i].Split(' ');
+
+            Vector2Int v0, v1;
+            int x0, y0, x1, y1;
+            if (int.TryParse(line[0], out x0) && int.TryParse(line[1], out y0)) v0 = new Vector2Int(x0, y0);
+            else v0 = Vector2Int.zero;
+
+            if (int.TryParse(line[2], out x1) && int.TryParse(line[3], out y1)) v1 = new Vector2Int(x1, y1);
+            else v1 = Vector2Int.zero;
+            
+            moveLists.Add(new Vector2Int[] { v0, v1 });
+            Debug.Log(moveLists[moveLists.Count - 1][0]);
+            Debug.Log(moveLists[moveLists.Count - 1][1]);
         }
     }
 
@@ -161,8 +186,9 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator InitializePlayerPosition()
     {
-        StartCoroutine(GetPlayerMoves());
+        // StartCoroutine(GetPlayerMoves());
         yield return new WaitForSeconds(PROCESS_WAITTIME);
+        nextPositions = moveLists[currentMove];
         Vector2Int[] initialPositions = nextPositions;
 
         // TODO: >2 players
@@ -297,7 +323,8 @@ public class GameManager : MonoBehaviour
         //};
 
         previousPositions = nextPositions;
-        StartCoroutine(GetPlayerMoves());
+        nextPositions = moveLists[currentMove];
+        //StartCoroutine(GetPlayerMoves());
         yield return new WaitForSeconds(PROCESS_WAITTIME);
         for (int i = 0; i < numPlayers; ++i)
         {

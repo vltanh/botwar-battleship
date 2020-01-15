@@ -195,10 +195,6 @@ public class PlayerController : MonoBehaviour
                 Die();
                 Destroy(gameObject);
             }
-            else
-            {
-                gameObject.GetComponent<Renderer>().enabled = false;
-            }
         }
     }
 

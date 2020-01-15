@@ -164,7 +164,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 153108, guid: ca514cb9ea5a00b499f879bd90a9aaca, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 456082, guid: ca514cb9ea5a00b499f879bd90a9aaca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -318,6 +318,10 @@ PrefabInstance:
     - target: {fileID: 134070, guid: 0d71d30c9fed80c44b9d25ec8f50c8f8, type: 3}
       propertyPath: m_Name
       value: SM_Veh_Veh_Boat_Large_01_Hull_Attachments
+      objectReference: {fileID: 0}
+    - target: {fileID: 134070, guid: 0d71d30c9fed80c44b9d25ec8f50c8f8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 453966, guid: 0d71d30c9fed80c44b9d25ec8f50c8f8, type: 3}
       propertyPath: m_LocalPosition.x

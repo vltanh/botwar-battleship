@@ -1,0 +1,86 @@
+5 7 15 3
+5 7 15 2
+5 7 15 3
+5 7 14 3
+5 7 13 3
+5 7 13 2
+5 7 13 1
+5 7 12 1
+5 7 11 1
+5 7 11 2
+5 7 11 3
+5 7 11 4
+5 7 11 5
+5 7 10 5
+5 7 9 5
+5 7 9 6
+5 7 9 7
+5 7 8 7
+5 7 7 7
+5 7 7 6
+5 7 7 5
+5 7 7 6
+5 7 7 7
+5 7 6 7
+5 7 5 7
+Command '['TeamLong.exe']' timed out after 1 seconds
+[TeamLong] Invalid starting point (12, 11).
+[TeamLong] Starting point (5, 7).
+[TeamHy] Starting point (15, 3).
+Command '['TeamLong.exe']' timed out after 1 seconds
+[TeamHy] Move from (15, 3) to (15, 2)
+[TeamHy] Get 3 coins.
+Command '['TeamLong.exe']' timed out after 1 seconds
+[TeamHy] Move from (15, 2) to (15, 3)
+Command '['TeamLong.exe']' timed out after 1 seconds
+[TeamHy] Move from (15, 3) to (14, 3)
+Command '['TeamLong.exe']' timed out after 1 seconds
+[TeamHy] Move from (14, 3) to (13, 3)
+Command '['TeamLong.exe']' timed out after 1 seconds
+[TeamHy] Move from (13, 3) to (13, 2)
+Command '['TeamLong.exe']' timed out after 1 seconds
+[TeamHy] Move from (13, 2) to (13, 1)
+Command '['TeamLong.exe']' timed out after 1 seconds
+[TeamHy] Move from (13, 1) to (12, 1)
+Command '['TeamLong.exe']' timed out after 1 seconds
+[TeamHy] Move from (12, 1) to (11, 1)
+Command '['TeamLong.exe']' timed out after 1 seconds
+[TeamHy] Move from (11, 1) to (11, 2)
+Command '['TeamLong.exe']' timed out after 1 seconds
+[TeamHy] Move from (11, 2) to (11, 3)
+Command '['TeamLong.exe']' timed out after 1 seconds
+[TeamHy] Move from (11, 3) to (11, 4)
+Command '['TeamLong.exe']' timed out after 1 seconds
+[TeamHy] Move from (11, 4) to (11, 5)
+Command '['TeamLong.exe']' timed out after 1 seconds
+[TeamHy] Move from (11, 5) to (10, 5)
+Command '['TeamLong.exe']' timed out after 1 seconds
+[TeamHy] Move from (10, 5) to (9, 5)
+Command '['TeamLong.exe']' timed out after 1 seconds
+[TeamHy] Move from (9, 5) to (9, 6)
+Command '['TeamLong.exe']' timed out after 1 seconds
+[TeamHy] Move from (9, 6) to (9, 7)
+[TeamHy] Get 1 coins.
+Command '['TeamLong.exe']' timed out after 1 seconds
+[TeamHy] Move from (9, 7) to (8, 7)
+Command '['TeamLong.exe']' timed out after 1 seconds
+[TeamHy] Move from (8, 7) to (7, 7)
+Command '['TeamLong.exe']' timed out after 1 seconds
+[TeamHy] Move from (7, 7) to (7, 6)
+Command '['TeamLong.exe']' timed out after 1 seconds
+[TeamHy] Move from (7, 6) to (7, 5)
+[TeamHy] Get 1 coins.
+Command '['TeamLong.exe']' timed out after 1 seconds
+[TeamHy] Move from (7, 5) to (7, 6)
+Command '['TeamLong.exe']' timed out after 1 seconds
+[TeamHy] Move from (7, 6) to (7, 7)
+Command '['TeamLong.exe']' timed out after 1 seconds
+[TeamHy] Move from (7, 7) to (6, 7)
+Command '['TeamLong.exe']' timed out after 1 seconds
+Command '['TeamHy.exe']' timed out after 1 seconds
+[TeamHy] Move from (6, 7) to (5, 7)
+[TeamLong] dies.
+[TeamHy] dies.
+Final score:
+[TeamLong] is dead with 0 coins.
+[TeamHy] is dead with 5 coins.

@@ -1,0 +1,64 @@
+1 9 3 7
+1 8 3 7
+1 9 3 7
+1 8 3 7
+1 9 3 7
+1 8 3 7
+1 9 3 7
+1 8 3 7
+1 9 3 7
+1 8 3 7
+1 9 3 7
+1 8 3 7
+1 9 3 7
+1 8 3 7
+1 9 3 7
+1 8 3 7
+1 9 3 7
+1 8 3 7
+1 9 3 7
+1 8 3 7
+[TeamBao][TeamMinh] Coincided starting point (2, 3).
+[TeamBao] Starting point (1, 9).
+[TeamMinh] Starting point (3, 7).
+__init__() missing 2 required positional arguments: 'x' and 'y'
+[TeamBao] Move from (1, 9) to (1, 8)
+__init__() missing 2 required positional arguments: 'x' and 'y'
+[TeamBao] Move from (1, 8) to (1, 9)
+__init__() missing 2 required positional arguments: 'x' and 'y'
+[TeamBao] Move from (1, 9) to (1, 8)
+__init__() missing 2 required positional arguments: 'x' and 'y'
+[TeamBao] Move from (1, 8) to (1, 9)
+__init__() missing 2 required positional arguments: 'x' and 'y'
+[TeamBao] Move from (1, 9) to (1, 8)
+__init__() missing 2 required positional arguments: 'x' and 'y'
+[TeamBao] Move from (1, 8) to (1, 9)
+__init__() missing 2 required positional arguments: 'x' and 'y'
+[TeamBao] Move from (1, 9) to (1, 8)
+__init__() missing 2 required positional arguments: 'x' and 'y'
+[TeamBao] Move from (1, 8) to (1, 9)
+__init__() missing 2 required positional arguments: 'x' and 'y'
+[TeamBao] Move from (1, 9) to (1, 8)
+__init__() missing 2 required positional arguments: 'x' and 'y'
+[TeamBao] Move from (1, 8) to (1, 9)
+__init__() missing 2 required positional arguments: 'x' and 'y'
+[TeamBao] Move from (1, 9) to (1, 8)
+__init__() missing 2 required positional arguments: 'x' and 'y'
+[TeamBao] Move from (1, 8) to (1, 9)
+__init__() missing 2 required positional arguments: 'x' and 'y'
+[TeamBao] Move from (1, 9) to (1, 8)
+__init__() missing 2 required positional arguments: 'x' and 'y'
+[TeamBao] Move from (1, 8) to (1, 9)
+__init__() missing 2 required positional arguments: 'x' and 'y'
+[TeamBao] Move from (1, 9) to (1, 8)
+__init__() missing 2 required positional arguments: 'x' and 'y'
+[TeamBao] Move from (1, 8) to (1, 9)
+__init__() missing 2 required positional arguments: 'x' and 'y'
+[TeamBao] Move from (1, 9) to (1, 8)
+__init__() missing 2 required positional arguments: 'x' and 'y'
+[TeamBao] Move from (1, 8) to (1, 9)
+__init__() missing 2 required positional arguments: 'x' and 'y'
+[TeamBao] Move from (1, 9) to (1, 8)
+Final score:
+[TeamBao] is alive with 0 coins.
+[TeamMinh] is alive with 0 coins.

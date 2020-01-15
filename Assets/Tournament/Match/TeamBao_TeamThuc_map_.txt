@@ -1,0 +1,82 @@
+2 3 9 12
+3 3 9 13
+4 3 10 13
+3 3 9 13
+3 4 8 13
+3 5 7 13
+3 6 8 13
+3 7 8 12
+3 8 8 11
+3 9 9 11
+3 10 10 11
+3 11 11 11
+4 11 11 12
+4 12 11 11
+4 13 10 11
+5 13 9 11
+4 13 8 11
+3 13 9 11
+2 13 8 11
+1 13 9 11
+[TeamBao] Starting point (2, 3).
+[TeamThuc] Starting point (9, 12).
+[TeamBao] Move from (2, 3) to (3, 3)
+[TeamThuc] Move from (9, 12) to (9, 13)
+[TeamBao] Equip shield.
+[TeamThuc] Get 4 coins.
+[TeamBao] Move from (3, 3) to (4, 3)
+[TeamThuc] Move from (9, 13) to (10, 13)
+[TeamThuc] Get 6 coins.
+[TeamBao] Move from (4, 3) to (3, 3)
+[TeamThuc] Move from (10, 13) to (9, 13)
+[TeamBao] Move from (3, 3) to (3, 4)
+[TeamThuc] Move from (9, 13) to (8, 13)
+[TeamThuc] Get 1 coins.
+[TeamBao] Move from (3, 4) to (3, 5)
+[TeamThuc] Move from (8, 13) to (7, 13)
+[TeamThuc] Get 2 coins.
+[TeamBao] Move from (3, 5) to (3, 6)
+[TeamThuc] Move from (7, 13) to (8, 13)
+[TeamBao] Move from (3, 6) to (3, 7)
+[TeamThuc] Move from (8, 13) to (8, 12)
+[TeamBao] Move from (3, 7) to (3, 8)
+[TeamThuc] Move from (8, 12) to (8, 11)
+[TeamThuc] Get 1 coins.
+[TeamBao] Move from (3, 8) to (3, 9)
+[TeamThuc] Move from (8, 11) to (9, 11)
+[TeamBao] Encounter trap.
+[TeamThuc] Get 1 coins.
+[TeamBao] Move from (3, 9) to (3, 10)
+[TeamThuc] Move from (9, 11) to (10, 11)
+[TeamBao] Get 2 coins.
+[TeamBao] Move from (3, 10) to (3, 11)
+[TeamThuc] Move from (10, 11) to (11, 11)
+[TeamBao] Get 3 coins.
+[TeamThuc] Get 1 coins.
+[TeamBao] Move from (3, 11) to (4, 11)
+[TeamThuc] Move from (11, 11) to (11, 12)
+[TeamBao] Get 1 coins.
+[TeamThuc] Get 1 coins.
+[TeamBao] Move from (4, 11) to (4, 12)
+[TeamThuc] Move from (11, 12) to (11, 11)
+[TeamBao] Encounter trap.
+[TeamBao] Move from (4, 12) to (4, 13)
+[TeamThuc] Move from (11, 11) to (10, 11)
+[TeamBao] Get 2 coins.
+[TeamBao] Move from (4, 13) to (5, 13)
+[TeamThuc] Move from (10, 11) to (9, 11)
+[TeamBao] Get 5 coins.
+[TeamBao] Move from (5, 13) to (4, 13)
+[TeamThuc] Move from (9, 11) to (8, 11)
+[TeamBao] Move from (4, 13) to (3, 13)
+[TeamThuc] Move from (8, 11) to (9, 11)
+[TeamBao] Get 1 coins.
+[TeamBao] Move from (3, 13) to (2, 13)
+[TeamThuc] Move from (9, 11) to (8, 11)
+[TeamBao] Get 3 coins.
+[TeamBao] Move from (2, 13) to (1, 13)
+[TeamThuc] Move from (8, 11) to (9, 11)
+[TeamBao] Encounter trap.
+Final score:
+[TeamBao] is alive and shielded with 17 coins.
+[TeamThuc] is alive with 17 coins.

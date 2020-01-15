@@ -5,6 +5,7 @@ using System.IO;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using SFB;
+using System.Diagnostics;
 
 public class OpenFile : MonoBehaviour
 {
@@ -79,6 +80,22 @@ public class OpenFile : MonoBehaviour
             secondPlayer.options[secondPlayer.value].text
         };
         GameInfo.mapConfigFileName = map.options[map.value].text;
+
+        Process process = new Process();
+
+        // Stop the process from opening a new window
+        process.StartInfo.RedirectStandardOutput = true;
+        process.StartInfo.UseShellExecute = false;
+        process.StartInfo.CreateNoWindow = true;
+
+        // Setup executable and parameters
+        process.StartInfo.FileName = $"{rootDir}/checker.exe";
+        process.StartInfo.WorkingDirectory = $"{rootDir}";
+
+        // Go
+        process.StartInfo.Arguments = $". {GameInfo.mapConfigFileName} {GameInfo.playerIds[0]} {GameInfo.playerIds[1]}";
+        process.Start();
+        process.WaitForExit();
 
         SceneManager.LoadScene("MainGame");
     }
