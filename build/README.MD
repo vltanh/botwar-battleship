@@ -54,3 +54,10 @@ For example:
 To run ```.exe``` file, replace ```python checker.py``` with ```checker.exe```. The file was built using pyinstaller with Python 3.8.
 
 To run visualize, run ```TrashCollecter.exe```, press ```Load``` at the menu and point to the ```Tournament``` folder (or any folder that has the same structure as described above).
+
+# Credit
+
+I would like to offer my gratitude to
+
+- Nguyen Ho Thang Long (HCMUS, CNTN2018) for providing the wonder assets; and
+- Vuong Hy (HCMUS, CNTN2016) for providing suggestions on tournament rules and matches arrangement, for writing the random map generator, and for the baseline + random bot.
