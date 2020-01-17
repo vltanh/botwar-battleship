@@ -41,6 +41,8 @@ This is where the program outputs the log files of the form ```<team_id>_<team_i
 
 # Usage
 
+## Checker
+
 To run on Python 3+:
 ```
 	python checker.py <path_to_root> <map_id> <team_id> <team_id>
@@ -51,9 +53,18 @@ For example:
 	python checker.py . Map TeamBaseline TeamRandom
 ```
 
+## Visualizer
+
 To run ```.exe``` file, replace ```python checker.py``` with ```checker.exe```. The file was built using pyinstaller with Python 3.8.
 
-To run visualize, run ```TrashCollecter.exe```, press ```Load``` at the menu and point to the ```Tournament``` folder (or any folder that has the same structure as described above).
+To run visualize, run ```TrashCollecter.exe```, press **Load** at the menu and point to the ```Tournament``` folder (or any folder that has the same structure as described above).
+
+Choose the map, and the two teams and press **Play**. It will take time since it will call ```checker.exe``` to run the two players` programs.
+
+In the game:
+
+- **Space** to run the next move
+- **Arrow Keys** to (Up/Down) change camera height (Left/Right) change camera`s angle.
 
 # Credit
 
