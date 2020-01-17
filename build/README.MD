@@ -6,10 +6,11 @@ The folder **must** be arranged this specific way:
 	<root>
 	|- checker.exe
 	|- Maps
-		|- <.txt files>
+		|- <map_id>.txt
 		|- ...
 	|- Players
-		|- <Folder name starts with "Team">
+		|- <team_id> (always start with "Team", i.e "Team*")
+			|- <team_id>.exe
 		|- ...
 	|- Match
 ```
@@ -51,3 +52,5 @@ For example:
 ```
 
 To run ```.exe``` file, replace ```python checker.py``` with ```checker.exe```. The file was built using pyinstaller with Python 3.8.
+
+To run visualize, run ```TrashCollecter.exe```, press ```Load``` at the menu and point to the ```Tournament``` folder (or any folder that has the same structure as described above).
