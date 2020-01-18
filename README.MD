@@ -1,3 +1,22 @@
+# Team
+
+**Team Name**: Yuta & Bella
+
+**Members**:
+
+|ID|Name|Student ID|
+|---|---|---|
+|1|Vũ Lê Thế Anh|1612838|
+|2|Nguyễn Lê Hồng Hạnh|1612849|
+
+# Game
+
+![](imgs/SS.gif)
+
+Menu |  Game 1 | Game 2
+:-------------------------:|:-------------------------:|:-------------------------:
+![](imgs/SS0.png)  |  ![](imgs/SS1.jpg)  | ![](imgs/SS2.jpg)
+
 # Folder structure
 
 The folder **must** be arranged this specific way:
