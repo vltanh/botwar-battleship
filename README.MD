@@ -85,9 +85,18 @@ In the game:
 - **Space** to run the next move
 - **Arrow Keys** to (Up/Down) change camera height (Left/Right) change camera`s angle.
 
-# Credit
+# Special Thanks
 
 I would like to offer my gratitude to
 
 - Nguyen Ho Thang Long (HCMUS, CNTN2018) for providing the wonder assets; and
 - Vuong Hy (HCMUS, CNTN2016) for providing suggestions on tournament rules and matches arrangement, for writing the random map generator, and for the baseline + random bot.
+
+# Resources
+
+- Song: 母港 (Homeport), Kantai Collection
+- Assets:
+	- [Low-poly Water](https://assetstore.unity.com/packages/tools/particles-effects/lowpoly-water-107563)
+	- [Polygon Pirates Package](https://assetstore.unity.com/packages/3d/environments/historic/polygon-pirates-pack-92579)
+	- [Polygon Arsenal](https://assetstore.unity.com/packages/vfx/particles/polygon-arsenal-109286)
+- Menu Background: Kongou, Kantai Collection
